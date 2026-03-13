@@ -431,6 +431,39 @@ class MyModelWrapper:
 
 See `models/boltz/wrapper.py` for a production reference with pairformer caching, MSA management, and atom reconciliation.
 
+## Details of Partprodelle wrapper:
+Architecture: Protpardelle operates in residue-atom37 space [B, L, 37, 3] while
+  sampleworks uses flat atom space [B, n_atoms, 3]. The wrapper bridges this with
+  differentiable scatter/gather operations so gradient-based guidance works.
+
+  Key components:
+
+  - ProtpardelleConditioning - frozen dataclass storing static features (seq_mask,
+  residue_index, chain_index, atom_mask, aatype) and a real_atom_indices tensor mapping
+  between flat and atom37 spaces
+  - _atomarray_to_atom37() - converts Biotite AtomArray → per-residue atom37 representation
+  using residue_constants.atom_order
+  - _build_model_atom_array() - builds a Biotite AtomArray for real atoms (used by
+  AtomReconciler for alignment)
+
+  featurize(): Converts atomworks structure to protpardelle features. Uses
+  atom37_mask_from_aatype for the canonical atom mask (backbone-only for backbone models,
+  full for all-atom). Builds x_init as flat real-atom coordinates.
+
+  step():
+  1. Scatter flat coords → [B, L, 37, 3] (differentiable)
+  2. Broadcast sigma t → per-residue [B, L] noise level
+  3. Run model.forward() with self-conditioning
+  4. Gather real atoms back to flat space (differentiable)
+  5. Update self-conditioning state for next step
+
+  initialize_from_prior(): Returns Gaussian noise in flat atom space, resets
+  self-conditioning.
+
+  Self-conditioning: Stored as mutable instance variables (_struct_self_cond,
+  _seq_self_cond), updated after each step(), reset on featurize() and
+  initialize_from_prior(). Detached to prevent gradient leakage across steps.
+
 ## Common Pitfalls
 
 ### Alignment and SE(3) Invariance
