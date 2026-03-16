@@ -4,8 +4,9 @@
 #$ -j y
 #$ -l mem_free=16G
 #$ -l scratch=10G
-#$ -l h_rt=24:00:00
-#$ -l gpu=1
+#$ -l h_rt=48:00:00
+#$ -q gpu.q
+#$ -l gpu_mem=16G
 #$ -r y
 #$ -m bea
 #$ -M joyce.mo@ucsf.edu
@@ -39,6 +40,25 @@
 #     qstat -u $(whoami)          # check job status
 #     cat output/boltz2_pure_guidance/run.log  # check logs after completion
 # ==============================================================================
+
+## 4. For Protpardelle — install manually + get checkpoint
+
+##   cd /wynton/home/rotation/jqmo
+##   git clone <protpardelle-repo-url> protpardelle
+##   cd sampleworks
+##   pixi shell
+##   pip install -e ../protpardelle
+##  exit
+
+##  mkdir -p ~/.protpardelle
+##  cp /path/to/config.yaml ~/.protpardelle/config.yaml
+##  cp /path/to/model.pth ~/.protpardelle/model.pth
+
+##  5. Submit jobs
+
+##  cd /wynton/home/rotation/jqmo/sampleworks
+##  qsub scripts/run_boltz2_guidance.sh
+##   qsub scripts/run_protpardelle_guidance.sh
 
 set -euo pipefail
 date

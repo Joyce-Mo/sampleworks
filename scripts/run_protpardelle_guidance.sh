@@ -5,7 +5,8 @@
 #$ -l mem_free=16G
 #$ -l scratch=10G
 #$ -l h_rt=24:00:00
-#$ -l gpu=1
+#$ -q gpu.q
+#$ -l gpu_mem=16G
 #$ -r y
 #$ -m bea
 #$ -M joyce.mo@ucsf.edu
