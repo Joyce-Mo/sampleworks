@@ -1,0 +1,59 @@
+#!/bin/bash
+#SBATCH -A myallocation       # Allocation name (replace with your allocation)
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=10
+#SBATCH --gpus=4
+#SBATCH --mem=92G
+#SBATCH --time=48:00:00
+#SBATCH -J boltz2_guidance
+#SBATCH -o boltz2_guidance.o%j
+#SBATCH -e boltz2_guidance.e%j
+#SBATCH -p gpu
+#SBATCH --mail-user=joyce.mo@ucsf.edu
+#SBATCH --mail-type=all
+
+set -euo pipefail
+date
+hostname
+nvidia-smi
+
+## Load modules
+module purge
+module load gpu
+module list
+
+## Configuration
+SAMPLEWORKS_DIR="$HOME/sampleworks"
+CHECKPOINT="$HOME/.boltz/boltz2_conf.ckpt"
+STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
+DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
+RESOLUTION=1.8
+OUTPUT_DIR="${SAMPLEWORKS_DIR}/output/boltz2_pure_guidance"
+GUIDANCE_START=130
+ENSEMBLE_SIZE=1  # 1 sample per GPU, 4 GPUs = 4 total ensemble members
+
+cd "$SAMPLEWORKS_DIR"
+
+## Launch 1 ensemble member per GPU in parallel
+for GPU_ID in 0 1 2 3; do
+    CUDA_VISIBLE_DEVICES=$GPU_ID \
+    pixi run -e boltz python scripts/boltz2_pure_guidance.py \
+        --model-checkpoint "$CHECKPOINT" \
+        --structure "$STRUCTURE" \
+        --density "$DENSITY" \
+        --resolution "$RESOLUTION" \
+        --output-dir "${OUTPUT_DIR}/gpu${GPU_ID}" \
+        --guidance-start "$GUIDANCE_START" \
+        --ensemble-size "$ENSEMBLE_SIZE" \
+        --augmentation \
+        --align-to-input &
+done
+
+## Wait for all background jobs to finish
+wait
+echo "All 4 ensemble members complete."
+
+## End-of-job summary
+echo "Job $SLURM_JOB_ID complete."
+sacct -j "$SLURM_JOB_ID" --format=JobID,Elapsed,MaxRSS,MaxVMSize,State

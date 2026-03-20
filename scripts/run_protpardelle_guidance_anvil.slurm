@@ -1,23 +1,29 @@
-#!/bin/bash
-#$ -S /bin/bash
-#$ -cwd
-#$ -j y
-#$ -l mem_free=16G
-#$ -l scratch=10G
-#$ -l h_rt=24:00:00
-#$ -q gpu.q
-#$ -l gpu_mem=16G
-#$ -r y
-#$ -m bea
-#$ -M joyce.mo@ucsf.edu
-
+#SBATCH --job-name=bolts_guidance_sampleworks_03202026
+#SBATCH --output=bolts_guidance_sampleworks_03202026.o%j
+#SBATCH --error=bolts_guidance_sampleworks_03202026.e%j
+#SBATCH --account=fc_actin
+#SBATCH --partition=savio3_gpu
+#SBATCH --time=48:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --gres=gpu:A40:1
+#SBATCH --qos=a40_gpu3_normal
+#SBATCH --mail-type=all
+#SBATCH --mail-user=jqmo@berkeley.edu
 
 set -euo pipefail
 date
 hostname
+nvidia-smi
 
-## Configuration 
-SAMPLEWORKS_DIR="/wynton/home/rotation/jqmo/sampleworks"
+## Load modules
+module purge
+module load modtree/gpu
+module list
+
+## Configuration
+SAMPLEWORKS_DIR="$HOME/sampleworks"
 PROTPARDELLE_CONFIG="$HOME/.protpardelle/config.yaml"
 PROTPARDELLE_CHECKPOINT="$HOME/.protpardelle/model.pth"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
@@ -26,13 +32,10 @@ RESOLUTION=1.8
 ENSEMBLE_SIZE=4
 GUIDANCE_START=130
 
-##  Activate environment
-#   module load CBI miniforge3
-#   source activate protpardelle
-
+## Run job
 cd "$SAMPLEWORKS_DIR"
 
-##  Run WITH guidance 
+## Run WITH guidance
 echo "Running Protpardelle WITH guidance"
 
 pixi run python scripts/protpardelle_pure_guidance.py \
@@ -47,7 +50,7 @@ pixi run python scripts/protpardelle_pure_guidance.py \
     --augmentation \
     --align-to-input
 
-##  Run WITHOUT guidance (unconditional sampling) 
+## Run WITHOUT guidance (unconditional sampling)
 echo "Running Protpardelle WITHOUT guidance"
 
 pixi run python scripts/protpardelle_pure_guidance.py \
@@ -60,7 +63,8 @@ pixi run python scripts/protpardelle_pure_guidance.py \
     --ensemble-size "$ENSEMBLE_SIZE" \
     --no-guidance
 
-##  End-of-job summary 
+## End-of-job summary
 echo ""
 echo "All Protpardelle runs complete."
-[[ -n "${JOB_ID:-}" ]] && qstat -j "$JOB_ID"
+echo "Job $SLURM_JOB_ID complete."
+sacct -j "$SLURM_JOB_ID" --format=JobID,Elapsed,MaxRSS,MaxVMSize,State
