@@ -150,6 +150,7 @@ pixi run test-all            # run all tests across all environments
 
 ```bash
 pixi run -e [model]-dev prek install
+pixi run -e [model]-dev prek install --hook-type commit-msg
 pixi run -e [model]-dev prek run --all-files
 ```
 
@@ -171,3 +172,14 @@ To develop on OS X, ensure you have [homebrew](https://brew.sh/) installed and r
 There are different (and as yet untested) environments for `boltz`. `protenix` won't currently work on a Mac due to
 the strict requirement of `triton` which requires an NVIDIA GPU. You may find similar issues with other environments.
 Debug as needed.
+
+
+## Commit Messages
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) to automate versioning and changelog generation. Format:
+
+```
+<type>(<scope>): <summary>
+```
+
+Common types: `feat`, `fix`, `docs`, `refactor`, `chore`, `test`, `perf`. A commitizen pre-commit hook validates messages at commit time. See [AGENTS.md](AGENTS.md#release-process) for full details.

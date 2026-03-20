@@ -233,6 +233,80 @@ pixi run -e boltz-dev prek run -a       # Run all hooks on all files
 
 Note: `ty` type checking is split per environment — Boltz files are checked in `boltz-dev`, Protenix files in `protenix-dev`, RF3 files in `rf3-dev`. See `.pre-commit-config.yaml` for the file routing rules.
 
+## Release Process
+
+Releases are fully automated via [python-semantic-release](https://python-semantic-release.readthedocs.io/) (PSR v10). No manual version bumps or changelog edits are needed.
+
+### Conventional Commits (Required)
+
+All commit messages **must** follow the [Conventional Commits](https://www.conventionalcommits.org/) format:
+
+```
+<type>(<optional scope>): <summary>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+**Types and their effect on versioning:**
+
+| Type | Description | Version bump |
+|------|-------------|-------------|
+| `feat` | New feature | Minor (0.x.0) |
+| `fix` | Bug fix | Patch (0.x.x) |
+| `docs` | Documentation only | None |
+| `refactor` | Code change (no new feature or fix) | None |
+| `test` | Adding/updating tests | None |
+| `chore` | Maintenance (CI, deps, tooling) | None |
+| `perf` | Performance improvement | Patch (0.x.x) |
+
+**Breaking changes** (append `!` after type, e.g. `feat!:`) bump the minor version while we're in 0.x (`major_on_zero = false`).
+
+**Examples:**
+```bash
+feat(rewards): add cryo-EM image stack reward function
+fix(boltz): correct atom reconciler index mapping for OXT atoms
+docs: update AGENTS.md with new model wrapper example
+refactor(scalers)!: rename StepScaler to StepGuide
+chore(ci): pin Docker build action to v5
+```
+
+A **commitizen** pre-commit hook validates commit messages locally. Install it with:
+```bash
+pixi run -e boltz-dev prek install --hook-type commit-msg
+```
+
+### How Releases Work
+
+1. Push/merge to `main` with `feat:` or `fix:` commits
+2. The **Release** workflow runs PSR, which:
+   - Analyzes commits since the last tag
+   - Determines the version bump (or skips if no releasable commits)
+   - Updates `version` in `pyproject.toml`
+   - Updates `CHANGELOG.md`
+   - Creates a version commit and `v{version}` tag
+   - Pushes the commit and tag
+3. The **Docker** workflow triggers on the new `v*.*.*` tag and builds images tagged with the version
+
+### What Does NOT Trigger a Release
+
+Commits with types `docs`, `refactor`, `test`, `chore`, `ci`, or `style` do not bump the version. They will appear in the next changelog under their respective sections when a releasable commit is included.
+
+### Version Strategy
+
+We use `major_on_zero = false`, meaning breaking changes bump minor (not major) while the version is 0.x. This will change when we decide to release 1.0.
+
+### Merge Strategy
+
+Use **squash merge** for all PRs. This collapses a PR's commits into a single commit on `main`, with the PR title as the commit message. The PR title **must** follow Conventional Commits format and controls the version bump:
+
+- `feat(rewards): add cryo-EM image stack reward` → minor bump
+- `fix(boltz): correct OXT atom mapping` → patch bump
+- `docs: update installation guide` → no release
+
+This keeps the changelog clean (one entry per PR), the version history predictable (one potential bump per PR), and requires no discipline around individual commit messages during development. PRs should be focused on a single logical change — avoid PRs that bundle unrelated features and fixes.
+
 ## Testing Philosophy
 
 Write black-box tests that verify **behavior**, not implementation. Test public interfaces with realistic inputs. Verify outputs match contracts — shapes, value ranges, mathematical properties.
