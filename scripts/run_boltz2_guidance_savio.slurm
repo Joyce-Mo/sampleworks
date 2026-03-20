@@ -5,11 +5,11 @@
 #SBATCH --error=bolts_guidance_sampleworks_03202026.e%j
 #SBATCH --account=ic_chem242
 #SBATCH --partition=savio2_gpu
-#SBATCH --time=48:00:00
+#SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --gres=gpu:A40:1
+#SBATCH --cpus-per-task=4
+#SBATCH --gres=gpu:1
 #SBATCH --qos=savio_normal
 #SBATCH --mail-type=all
 #SBATCH --mail-user=jqmo@berkeley.edu
