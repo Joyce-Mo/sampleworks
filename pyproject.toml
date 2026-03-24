@@ -33,7 +33,7 @@ dependencies = [
 ]
 name = "sampleworks"
 requires-python = ">= 3.11, <3.14"
-version = "0.3.0"
+version = "0.3.1"
 
 [tool.hatch.metadata]
 allow-direct-references = true
