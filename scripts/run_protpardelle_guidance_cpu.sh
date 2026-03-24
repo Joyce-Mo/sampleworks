@@ -15,7 +15,7 @@ date
 hostname
 
 ## Configuration
-SAMPLEWORKS_DIR="/wynton/home/rotation/jqmo/sampleworks"
+SAMPLEWORKS_DIR="/wynton/home/rotation/jqmo/rotation3/sampleworks"
 PROTPARDELLE_CONFIG="$HOME/.protpardelle/config.yaml"
 PROTPARDELLE_CHECKPOINT="$HOME/.protpardelle/model.pth"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
