@@ -1,12 +1,11 @@
 #!/bin/bash
 #$ -S /bin/bash
 #$ -cwd
-#$ -o boltz_guidance_test_$JOB_ID.o
-#$ -e boltz_guidance_test_$JOB_ID.e
-#$ -o /wynton/home/rotation/jqmo/rotation3/sampleworks/logs
+#$ -o /wynton/home/rotation/jqmo/rotation3/sampleworks/logs/boltz_guidance_test_$JOB_ID.o
+#$ -e /wynton/home/rotation/jqmo/rotation3/sampleworks/logs/boltz_guidance_test_$JOB_ID.e
 #$ -l mem_free=16G
 #$ -l scratch=10G
-#$ -l h_rt=10:00:00
+#$ -l h_rt=1:00:00
 #$ -q gpu.q
 #$ -l gpu_mem=16G
 #$ -r y
@@ -16,8 +15,13 @@
 set -euo pipefail
 date
 hostname
+nvidia-smi
 
-## Configuration (based on example lol)
+## Use fast local scratch for CUDA JIT cache to avoid stale/corrupt caches
+export TORCH_EXTENSIONS_DIR="${TMPDIR:-/scratch}/${USER}/torch_extensions"
+mkdir -p "$TORCH_EXTENSIONS_DIR"
+
+## Configuration
 SAMPLEWORKS_DIR="/wynton/home/rotation/jqmo/rotation3/sampleworks"
 CHECKPOINT="$HOME/.boltz/boltz2_conf.ckpt"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
