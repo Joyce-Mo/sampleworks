@@ -5,7 +5,7 @@
 #$ -e /wynton/home/rotation/jqmo/rotation3/sampleworks/logs/boltz_guidance_test_$JOB_ID.e
 #$ -l mem_free=16G
 #$ -l scratch=10G
-#$ -l h_rt=10:00
+#$ -l h_rt=1:00:00
 #$ -q gpu.q
 #$ -l gpu_mem=16G
 #$ -r y
