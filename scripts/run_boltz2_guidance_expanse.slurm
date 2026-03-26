@@ -1,16 +1,16 @@
 #!/bin/bash
-#SBATCH -A myallocation       # Allocation name (replace with your allocation)
+#SBATCH -A ucb350       # Allocation name (replace with your allocation)
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus=4
 #SBATCH --mem=92G
-#SBATCH --time=48:00:00
+#SBATCH --time=1:00:00
 #SBATCH -J boltz2_guidance
 #SBATCH -o boltz2_guidance.o%j
 #SBATCH -e boltz2_guidance.e%j
 #SBATCH -p gpu
-#SBATCH --mail-user=joyce.mo@ucsf.edu
+#SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
 
 set -euo pipefail
