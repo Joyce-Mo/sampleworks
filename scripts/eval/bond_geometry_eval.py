@@ -40,7 +40,7 @@ def bond_length_violations(pose: AtomArray, tolerance: float = 0.1) -> tuple[flo
     """
     try:
         bounds = check_pose_and_get_bounds(pose)
-    except (ValueError, BadStructureError) as e:
+    except (ValueError, BadStructureError):
         return np.nan, pd.DataFrame()
 
     bond_indices = np.sort(pose.bonds.as_array()[:, :2], axis=1)
@@ -97,11 +97,10 @@ def check_pose_and_get_bounds(pose: AtomArray):
             "`biotite.structure.io.pdbx.get_structure(..., include_bonds=True)`"
         )
         raise ValueError("The structure does not have bonds.")
-    
+
     # this fetches values from RDKit, raises BadStructureError if the structure is bad
     bounds = get_distance_bounds(pose)
     return bounds
-
 
 
 def bond_angle_violations(pose: AtomArray, tolerance: float = 0.1) -> tuple[float, pd.DataFrame]:
