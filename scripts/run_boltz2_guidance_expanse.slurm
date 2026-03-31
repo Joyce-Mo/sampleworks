@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH -A ucb350       # Allocation name (replace with your allocation)
+#SBATCH -A ucb368   # Allocation name ***make sure to update with kortemme lab later!
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus=4
 #SBATCH --mem=92G
 #SBATCH --time=1:00:00
-#SBATCH -J boltz2_guidance
-#SBATCH -o boltz2_guidance.o%j
-#SBATCH -e boltz2_guidance.e%j
+#SBATCH -J boltz2_guidance_03312026
+#SBATCH -o boltz2_guidance_03312026.o%j
+#SBATCH -e boltz2_guidance_03312026.e%j
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
@@ -24,8 +24,8 @@ module load gpu
 module list
 
 ## Configuration
-SAMPLEWORKS_DIR="$HOME/sampleworks"
-CHECKPOINT="$HOME/.boltz/boltz2_conf.ckpt"
+SAMPLEWORKS_DIR="/expanse/lustre/scratch/jmo/temp_project/sampleworks"
+CHECKPOINT="${SAMPLEWORKS_DIR}/.boltz/boltz2_conf.ckpt"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
 DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 RESOLUTION=1.8

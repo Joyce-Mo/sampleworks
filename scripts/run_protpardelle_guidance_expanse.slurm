@@ -1,16 +1,16 @@
 #!/bin/bash
-#SBATCH -A myallocation       # Allocation name (replace with your allocation)
+#SBATCH -A ucb368    
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus=4
 #SBATCH --mem=92G
-#SBATCH --time=24:00:00
-#SBATCH -J protpardelle_guid
-#SBATCH -o protpardelle_guidance.o%j
-#SBATCH -e protpardelle_guidance.e%j
+#SBATCH --time=1:00:00
+#SBATCH -J protpardelle_guidance_test_03312026
+#SBATCH -o protpardelle_guidance_$SLURM_JOB_ID_03312026.out%j
+#SBATCH -e protpardelle_guidance_$SLURM_JOB_ID_03312026.err%j
 #SBATCH -p gpu
-#SBATCH --mail-user=joyce.mo@ucsf.edu
+#SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
 
 set -euo pipefail
@@ -20,11 +20,11 @@ nvidia-smi
 
 ## Load modules
 module purge
-module load gpu
+module load cuda
 module list
 
 ## Configuration
-SAMPLEWORKS_DIR="$HOME/sampleworks"
+SAMPLEWORKS_DIR="/expanse/lustre/scratch/jmo/temp_project/sampleworks"
 PROTPARDELLE_CONFIG="$HOME/.protpardelle/config.yaml"
 PROTPARDELLE_CHECKPOINT="$HOME/.protpardelle/model.pth"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
@@ -35,7 +35,7 @@ GUIDANCE_START=130
 
 cd "$SAMPLEWORKS_DIR"
 
-## ── Run WITH guidance (4 GPUs in parallel) ──────────────────────────────────
+## Run WITH guidance
 echo "Running Protpardelle WITH guidance (4 GPUs)"
 
 for GPU_ID in 0 1 2 3; do
@@ -56,7 +56,7 @@ done
 wait
 echo "Guided runs complete."
 
-## ── Run WITHOUT guidance (4 GPUs in parallel) ───────────────────────────────
+## Run WITHOUT guidance (4 GPUs in parallel)
 echo "Running Protpardelle WITHOUT guidance (4 GPUs)"
 
 for GPU_ID in 0 1 2 3; do
