@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH -A ucb368   # Allocation name ***make sure to update with kortemme lab later!
+#SBATCH -A ucb368   
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus=4
 #SBATCH --mem=92G
 #SBATCH --time=1:00:00
-#SBATCH -J boltz2_guidance_03312026
-#SBATCH -o boltz2_guidance_03312026.o%j
-#SBATCH -e boltz2_guidance_03312026.e%j
+#SBATCH -J boltz2_guidance_4012026_
+#SBATCH -o boltz2_guidance_4012026_$SLURM_JOB_ID.out%j
+#SBATCH -e boltz2_guidance_4012026_$SLURM_JOB_ID.err%j
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
@@ -20,8 +20,13 @@ nvidia-smi
 
 ## Load modules
 module purge
+module load cuda/12.6
 module load gpu
 module list
+
+## Environment varialbes 
+export CCD_MIRROR_PATH=/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl
+export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}         
 
 ## Configuration
 SAMPLEWORKS_DIR="/expanse/lustre/scratch/jmo/temp_project/sampleworks"
