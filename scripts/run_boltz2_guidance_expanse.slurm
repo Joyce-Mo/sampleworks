@@ -7,8 +7,8 @@
 #SBATCH --mem=92G
 #SBATCH --time=1:00:00
 #SBATCH -J boltz2_guidance_4012026_
-#SBATCH -o boltz2_guidance_4012026_$SLURM_JOB_ID.out
-#SBATCH -e boltz2_guidance_4012026_$SLURM_JOB_ID.err
+#SBATCH -o logs/boltz2_guidance_4012026_$SLURM_JOB_ID.out
+#SBATCH -e logs/boltz2_guidance_4012026_$SLURM_JOB_ID.err
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
@@ -31,7 +31,7 @@ export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
 
 ## Configuration
 SAMPLEWORKS_DIR="/expanse/lustre/scratch/jmo/temp_project/sampleworks"
-CHECKPOINT="${SAMPLEWORKS_DIR}/.boltz/boltz2_conf.ckpt"
+CHECKPOINT="${SAMPLEWORKS_DIR}/boltz2_conf.ckpt"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
 DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 RESOLUTION=1.8
