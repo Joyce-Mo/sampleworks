@@ -7,8 +7,8 @@
 #SBATCH --mem=92G
 #SBATCH --time=1:00:00
 #SBATCH -J boltz2_guidance_4012026_
-#SBATCH -o boltz2_guidance_4012026_$SLURM_JOB_ID.out%j
-#SBATCH -e boltz2_guidance_4012026_$SLURM_JOB_ID.err%j
+#SBATCH -o boltz2_guidance_4012026_$SLURM_JOB_ID.out
+#SBATCH -e boltz2_guidance_4012026_$SLURM_JOB_ID.err
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
@@ -20,9 +20,10 @@ nvidia-smi
 
 ## Load modules
 module purge
-module load cuda/12.6
-module load gpu
-module list
+module load gpu/0.15.4
+module load gcc/7.2.0
+module load cuda
+module list cuda/11.0.2
 
 ## Environment varialbes 
 export CCD_MIRROR_PATH=/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl
