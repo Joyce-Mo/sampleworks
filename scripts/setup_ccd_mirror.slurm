@@ -2,13 +2,14 @@
 #SBATCH -A ucb368
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=10
+#SBATCH --gpus=1
+#SBATCH --mem=92G
 #SBATCH --time=0:30:00
 #SBATCH -J setup_ccd_mirror
 #SBATCH -o logs/setup_ccd_mirror_%j.out
 #SBATCH -e logs/setup_ccd_mirror_%j.err
-#SBATCH -p shared
+#SBATCH -p gpu
 
 set -euo pipefail
 date
