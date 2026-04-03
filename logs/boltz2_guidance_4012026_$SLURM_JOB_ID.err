@@ -1,0 +1,583 @@
+
+Currently Loaded Modules Matching: cuda/11.0.2
+  1) cuda/11.0.2
+
+ 
+
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/build.ninja...
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Building extension module dilate_points_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module dilate_points_cuda...
+Loading extension module dilate_points_cuda...
+Loading extension module dilate_points_cuda...
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2506, in _run_ninja_build
+    subprocess.run(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2076, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2222, in _write_ninja_file_and_build_library
+    _run_ninja_build(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2522, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 'dilate_points_cuda'
+2026-04-02 23:14:17.162 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-02 23:14:17.162 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-02 23:14:17.162 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-02 23:14:17.162 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-02 23:14:17.249 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-02 23:14:17.249 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-02 23:14:17.249 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-02 23:14:17.249 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-02 23:14:17.251 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-02 23:14:17.251 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-02 23:14:17.251 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-02 23:14:17.251 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-02 23:14:17.514 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-02 23:14:17.514 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-02 23:14:17.514 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-02 23:14:17.514 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-02 23:14:17.514 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-02 23:14:17.514 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-02 23:14:17.514 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-02 23:14:17.514 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+2026-04-02 23:15:43.296 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-02 23:15:45.282 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:415 - Error running guidance: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl' consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu1/run.log) for real errors.
+2026-04-02 23:15:45.638 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:416 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 426, in _run_guidance
+    reward_function, structure = get_reward_function_and_structure(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 235, in get_reward_function_and_structure
+    structure = parse(
+                ^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 333, in parse
+    result = _parse_from_cif(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 726, in _parse_from_cif
+    asym_unit_stack = get_structure(
+                      ^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 285, in get_structure
+    atom_array_stack = _add_bonds(
+                       ^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 194, in _add_bonds
+    array = add_inter_residue_bonds(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/template.py", line 426, in add_inter_residue_bonds
+    polymer_bonds, polymer_bond_leaving_atom_idxs = get_inferred_polymer_bonds(atom_array)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 171, in get_inferred_polymer_bonds
+    leaving_this_res = _get_leaving_atom_idxs_for(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 53, in _get_leaving_atom_idxs_for
+    leaving_atoms = get_chem_comp_leaving_atom_names(res_name).get(atom_name, ())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 565, in get_chem_comp_leaving_atom_names
+    chem_comp = atom_array_from_ccd_code(ccd_code, ccd_mirror_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/common.py", line 161, in wrapper
+    return copy_func(cached_func(*args, **kwargs))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 501, in atom_array_from_ccd_code
+    if ccd_mirror_path and ccd_code in get_available_ccd_codes_in_mirror(ccd_mirror_path):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 141, in get_available_ccd_codes_in_mirror
+    for level1_dir in root_path.iterdir():
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl'
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 426, in _run_guidance
+    reward_function, structure = get_reward_function_and_structure(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 235, in get_reward_function_and_structure
+    structure = parse(
+                ^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 333, in parse
+    result = _parse_from_cif(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 726, in _parse_from_cif
+    asym_unit_stack = get_structure(
+                      ^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 285, in get_structure
+    atom_array_stack = _add_bonds(
+                       ^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 194, in _add_bonds
+    array = add_inter_residue_bonds(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/template.py", line 426, in add_inter_residue_bonds
+    polymer_bonds, polymer_bond_leaving_atom_idxs = get_inferred_polymer_bonds(atom_array)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 171, in get_inferred_polymer_bonds
+    leaving_this_res = _get_leaving_atom_idxs_for(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 53, in _get_leaving_atom_idxs_for
+    leaving_atoms = get_chem_comp_leaving_atom_names(res_name).get(atom_name, ())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 565, in get_chem_comp_leaving_atom_names
+    chem_comp = atom_array_from_ccd_code(ccd_code, ccd_mirror_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/common.py", line 161, in wrapper
+    return copy_func(cached_func(*args, **kwargs))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 501, in atom_array_from_ccd_code
+    if ccd_mirror_path and ccd_code in get_available_ccd_codes_in_mirror(ccd_mirror_path):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 141, in get_available_ccd_codes_in_mirror
+    for level1_dir in root_path.iterdir():
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 19, in <module>
+    main(guidance_args)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 14, in main
+    run_guidance(args, GuidanceType.PURE_GUIDANCE, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 417, in run_guidance
+    return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 559, in get_job_result
+    protein=args.protein,
+            ^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'protein'
+2026-04-02 23:15:52.007 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-02 23:15:52.476 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+2026-04-02 23:15:52.498 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:415 - Error running guidance: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl' consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu0/run.log) for real errors.
+2026-04-02 23:15:52.501 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:416 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 426, in _run_guidance
+    reward_function, structure = get_reward_function_and_structure(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 235, in get_reward_function_and_structure
+    structure = parse(
+                ^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 333, in parse
+    result = _parse_from_cif(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 726, in _parse_from_cif
+    asym_unit_stack = get_structure(
+                      ^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 285, in get_structure
+    atom_array_stack = _add_bonds(
+                       ^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 194, in _add_bonds
+    array = add_inter_residue_bonds(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/template.py", line 426, in add_inter_residue_bonds
+    polymer_bonds, polymer_bond_leaving_atom_idxs = get_inferred_polymer_bonds(atom_array)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 171, in get_inferred_polymer_bonds
+    leaving_this_res = _get_leaving_atom_idxs_for(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 53, in _get_leaving_atom_idxs_for
+    leaving_atoms = get_chem_comp_leaving_atom_names(res_name).get(atom_name, ())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 565, in get_chem_comp_leaving_atom_names
+    chem_comp = atom_array_from_ccd_code(ccd_code, ccd_mirror_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/common.py", line 161, in wrapper
+    return copy_func(cached_func(*args, **kwargs))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 501, in atom_array_from_ccd_code
+    if ccd_mirror_path and ccd_code in get_available_ccd_codes_in_mirror(ccd_mirror_path):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 141, in get_available_ccd_codes_in_mirror
+    for level1_dir in root_path.iterdir():
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl'
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 426, in _run_guidance
+    reward_function, structure = get_reward_function_and_structure(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 235, in get_reward_function_and_structure
+    structure = parse(
+                ^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 333, in parse
+    result = _parse_from_cif(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 726, in _parse_from_cif
+    asym_unit_stack = get_structure(
+                      ^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 285, in get_structure
+    atom_array_stack = _add_bonds(
+                       ^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 194, in _add_bonds
+    array = add_inter_residue_bonds(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/template.py", line 426, in add_inter_residue_bonds
+    polymer_bonds, polymer_bond_leaving_atom_idxs = get_inferred_polymer_bonds(atom_array)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 171, in get_inferred_polymer_bonds
+    leaving_this_res = _get_leaving_atom_idxs_for(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 53, in _get_leaving_atom_idxs_for
+    leaving_atoms = get_chem_comp_leaving_atom_names(res_name).get(atom_name, ())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 565, in get_chem_comp_leaving_atom_names
+    chem_comp = atom_array_from_ccd_code(ccd_code, ccd_mirror_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/common.py", line 161, in wrapper
+    return copy_func(cached_func(*args, **kwargs))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 501, in atom_array_from_ccd_code
+    if ccd_mirror_path and ccd_code in get_available_ccd_codes_in_mirror(ccd_mirror_path):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 141, in get_available_ccd_codes_in_mirror
+    for level1_dir in root_path.iterdir():
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 19, in <module>
+    main(guidance_args)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 14, in main
+    run_guidance(args, GuidanceType.PURE_GUIDANCE, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 417, in run_guidance
+    return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 559, in get_job_result
+    protein=args.protein,
+            ^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'protein'
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-02 23:15:52.976 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:415 - Error running guidance: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl' consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu2/run.log) for real errors.
+2026-04-02 23:15:52.980 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:416 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 426, in _run_guidance
+    reward_function, structure = get_reward_function_and_structure(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 235, in get_reward_function_and_structure
+    structure = parse(
+                ^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 333, in parse
+    result = _parse_from_cif(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 726, in _parse_from_cif
+    asym_unit_stack = get_structure(
+                      ^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 285, in get_structure
+    atom_array_stack = _add_bonds(
+                       ^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 194, in _add_bonds
+    array = add_inter_residue_bonds(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/template.py", line 426, in add_inter_residue_bonds
+    polymer_bonds, polymer_bond_leaving_atom_idxs = get_inferred_polymer_bonds(atom_array)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 171, in get_inferred_polymer_bonds
+    leaving_this_res = _get_leaving_atom_idxs_for(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 53, in _get_leaving_atom_idxs_for
+    leaving_atoms = get_chem_comp_leaving_atom_names(res_name).get(atom_name, ())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 565, in get_chem_comp_leaving_atom_names
+    chem_comp = atom_array_from_ccd_code(ccd_code, ccd_mirror_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/common.py", line 161, in wrapper
+    return copy_func(cached_func(*args, **kwargs))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 501, in atom_array_from_ccd_code
+    if ccd_mirror_path and ccd_code in get_available_ccd_codes_in_mirror(ccd_mirror_path):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 141, in get_available_ccd_codes_in_mirror
+    for level1_dir in root_path.iterdir():
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl'
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 426, in _run_guidance
+    reward_function, structure = get_reward_function_and_structure(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 235, in get_reward_function_and_structure
+    structure = parse(
+                ^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 333, in parse
+    result = _parse_from_cif(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 726, in _parse_from_cif
+    asym_unit_stack = get_structure(
+                      ^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 285, in get_structure
+    atom_array_stack = _add_bonds(
+                       ^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 194, in _add_bonds
+    array = add_inter_residue_bonds(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/template.py", line 426, in add_inter_residue_bonds
+    polymer_bonds, polymer_bond_leaving_atom_idxs = get_inferred_polymer_bonds(atom_array)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 171, in get_inferred_polymer_bonds
+    leaving_this_res = _get_leaving_atom_idxs_for(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 53, in _get_leaving_atom_idxs_for
+    leaving_atoms = get_chem_comp_leaving_atom_names(res_name).get(atom_name, ())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 565, in get_chem_comp_leaving_atom_names
+    chem_comp = atom_array_from_ccd_code(ccd_code, ccd_mirror_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/common.py", line 161, in wrapper
+    return copy_func(cached_func(*args, **kwargs))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 501, in atom_array_from_ccd_code
+    if ccd_mirror_path and ccd_code in get_available_ccd_codes_in_mirror(ccd_mirror_path):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 141, in get_available_ccd_codes_in_mirror
+    for level1_dir in root_path.iterdir():
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 19, in <module>
+    main(guidance_args)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 14, in main
+    run_guidance(args, GuidanceType.PURE_GUIDANCE, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 417, in run_guidance
+    return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 559, in get_job_result
+    protein=args.protein,
+            ^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'protein'
+2026-04-02 23:15:53.048 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-02 23:15:53.526 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:415 - Error running guidance: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl' consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu3/run.log) for real errors.
+2026-04-02 23:15:53.529 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:416 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 426, in _run_guidance
+    reward_function, structure = get_reward_function_and_structure(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 235, in get_reward_function_and_structure
+    structure = parse(
+                ^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 333, in parse
+    result = _parse_from_cif(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 726, in _parse_from_cif
+    asym_unit_stack = get_structure(
+                      ^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 285, in get_structure
+    atom_array_stack = _add_bonds(
+                       ^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 194, in _add_bonds
+    array = add_inter_residue_bonds(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/template.py", line 426, in add_inter_residue_bonds
+    polymer_bonds, polymer_bond_leaving_atom_idxs = get_inferred_polymer_bonds(atom_array)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 171, in get_inferred_polymer_bonds
+    leaving_this_res = _get_leaving_atom_idxs_for(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 53, in _get_leaving_atom_idxs_for
+    leaving_atoms = get_chem_comp_leaving_atom_names(res_name).get(atom_name, ())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 565, in get_chem_comp_leaving_atom_names
+    chem_comp = atom_array_from_ccd_code(ccd_code, ccd_mirror_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/common.py", line 161, in wrapper
+    return copy_func(cached_func(*args, **kwargs))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 501, in atom_array_from_ccd_code
+    if ccd_mirror_path and ccd_code in get_available_ccd_codes_in_mirror(ccd_mirror_path):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 141, in get_available_ccd_codes_in_mirror
+    for level1_dir in root_path.iterdir():
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl'
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 426, in _run_guidance
+    reward_function, structure = get_reward_function_and_structure(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 235, in get_reward_function_and_structure
+    structure = parse(
+                ^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 333, in parse
+    result = _parse_from_cif(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/parser.py", line 726, in _parse_from_cif
+    asym_unit_stack = get_structure(
+                      ^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 285, in get_structure
+    atom_array_stack = _add_bonds(
+                       ^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 194, in _add_bonds
+    array = add_inter_residue_bonds(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/template.py", line 426, in add_inter_residue_bonds
+    polymer_bonds, polymer_bond_leaving_atom_idxs = get_inferred_polymer_bonds(atom_array)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 171, in get_inferred_polymer_bonds
+    leaving_this_res = _get_leaving_atom_idxs_for(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/bonds.py", line 53, in _get_leaving_atom_idxs_for
+    leaving_atoms = get_chem_comp_leaving_atom_names(res_name).get(atom_name, ())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 565, in get_chem_comp_leaving_atom_names
+    chem_comp = atom_array_from_ccd_code(ccd_code, ccd_mirror_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/common.py", line 161, in wrapper
+    return copy_func(cached_func(*args, **kwargs))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 501, in atom_array_from_ccd_code
+    if ccd_mirror_path and ccd_code in get_available_ccd_codes_in_mirror(ccd_mirror_path):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/atomworks/io/utils/ccd.py", line 141, in get_available_ccd_codes_in_mirror
+    for level1_dir in root_path.iterdir():
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 19, in <module>
+    main(guidance_args)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 14, in main
+    run_guidance(args, GuidanceType.PURE_GUIDANCE, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 417, in run_guidance
+    return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 559, in get_job_result
+    protein=args.protein,
+            ^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'protein'
+/cm/local/apps/slurm/var/spool/job47789294/slurm_script: line 65: sacct: command not found
