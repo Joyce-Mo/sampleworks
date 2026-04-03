@@ -3,12 +3,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=10
-#SBATCH --gpus=4
+#SBATCH --gpus=a100:4
 #SBATCH --mem=92G
 #SBATCH --time=1:00:00
 #SBATCH -J boltz2_guidance_4012026_
-#SBATCH -o logs/boltz2_guidance_4012026_$SLURM_JOB_ID.out
-#SBATCH -e logs/boltz2_guidance_4012026_$SLURM_JOB_ID.err
+#SBATCH -o logs/boltz2_guidance_4012026_%j.out
+#SBATCH -e logs/boltz2_guidance_4012026_%j.err
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
@@ -21,13 +21,12 @@ nvidia-smi
 ## Load modules
 module purge
 module load gpu/0.15.4
-module load gcc/7.2.0
-module load cuda
-module list cuda/11.0.2
+module load gcc/10.2.0
+module load cuda/12.2.1
 
-## Environment varialbes 
-export CCD_MIRROR_PATH=/expanse/lustre/scratch/jmo/temp_project/sampleworks/ccd.pkl
-export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}         
+## Environment variables
+export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
+export TORCH_CUDA_ARCH_LIST="7.0;8.0"
 
 ## Configuration
 SAMPLEWORKS_DIR="/expanse/lustre/scratch/jmo/temp_project/sampleworks"
