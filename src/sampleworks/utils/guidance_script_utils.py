@@ -576,8 +576,8 @@ def get_job_result(
     start_time = epoch_seconds(started_at)
     end_time = epoch_seconds(ended_at)
     result = JobResult(
-        protein=args.protein,
-        model=args.model,
+        protein=getattr(args, "protein", "unknown"),
+        model=getattr(args, "model", "unknown"),
         method=getattr(args, "method", None),
         scaler=args.guidance_type,
         ensemble_size=args.ensemble_size,

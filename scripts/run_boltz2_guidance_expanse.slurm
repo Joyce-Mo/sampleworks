@@ -4,7 +4,7 @@
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus=a100:4
-#SBATCH --mem=92G
+#SBATCH --mem=128G
 #SBATCH --time=1:00:00
 #SBATCH -J boltz2_guidance_4012026_
 #SBATCH -o logs/boltz2_guidance_4012026_%j.out
@@ -21,7 +21,7 @@ nvidia-smi
 ## Load modules
 module purge
 module load gpu/0.15.4
-module load gcc/10.2.0
+module load gcc/10.2.0/npcyll4
 module load cuda/12.2.1
 
 ## Environment variables

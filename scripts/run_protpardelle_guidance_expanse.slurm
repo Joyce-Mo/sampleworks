@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH -A ucb368    
+#SBATCH -A ucb368   
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus=4
 #SBATCH --mem=92G
 #SBATCH --time=1:00:00
-#SBATCH -J protpardelle_guidance_test_03312026
-#SBATCH -o protpardelle_guidance_$SLURM_JOB_ID_03312026.out%j
-#SBATCH -e protpardelle_guidance_$SLURM_JOB_ID_03312026.err%j
+#SBATCH -J protpardelle_guidance_4022026_
+#SBATCH -o logs/protpardelle_guidance_4022026_%j.out
+#SBATCH -e logs/protpardelle_guidance_4022026_%j.err
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
@@ -20,13 +20,21 @@ nvidia-smi
 
 ## Load modules
 module purge
-module load cuda
-module list
+module load gpu/0.15.4
+module load gcc/10.2.0
+module load cuda/12.2.1
+
+## Environment variables
+export TORCH_CUDA_ARCH_LIST="7.0;8.0"
+PROTPARDELLE_DIR="/expanse/lustre/scratch/jmo/temp_project/protpardelle-1c"
+export PYTHONPATH="${PROTPARDELLE_DIR}/src:${PYTHONPATH:-}"
 
 ## Configuration
 SAMPLEWORKS_DIR="/expanse/lustre/scratch/jmo/temp_project/sampleworks"
-PROTPARDELLE_CONFIG="$HOME/.protpardelle/config.yaml"
-PROTPARDELLE_CHECKPOINT="$HOME/.protpardelle/model.pth"
+PROTPARDELLE_CONFIG="${PROTPARDELLE_DIR}/examples/training/cc89.yaml"
+
+## weights
+PROTPARDELLE_CHECKPOINT="${PROTPARDELLE_DIR}/model_params/weights/cc89_epoch415.pth"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
 DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 RESOLUTION=1.8
