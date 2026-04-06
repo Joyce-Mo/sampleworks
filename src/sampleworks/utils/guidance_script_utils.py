@@ -400,11 +400,15 @@ def run_guidance(
         with logger.contextualize(special=True):
             _run_guidance(args, guidance_type, model_wrapper, device)
         logger.info("Guidance run successfully!")
-        return get_job_result(args, device, started_at, datetime.now(), 0, "success")
+        return get_job_result(
+            args, device, started_at, datetime.now(), 0, "success", guidance_type
+        )
     except Exception as e:
         logger.error(f"Error running guidance: {e} consult logs ({log_path}) for real errors.")
         logger.error(traceback.format_exc())
-        return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+        return get_job_result(
+            args, device, started_at, datetime.now(), 1, "failed", guidance_type
+        )
     finally:
         logger.remove(handle)
 
@@ -572,6 +576,7 @@ def get_job_result(
     ended_at: datetime,
     exit_code: int,
     status: str,
+    guidance_type: str,
 ) -> JobResult:
     start_time = epoch_seconds(started_at)
     end_time = epoch_seconds(ended_at)
@@ -579,7 +584,7 @@ def get_job_result(
         protein=getattr(args, "protein", "unknown"),
         model=getattr(args, "model", "unknown"),
         method=getattr(args, "method", None),
-        scaler=args.guidance_type,
+        scaler=guidance_type,
         ensemble_size=args.ensemble_size,
         gradient_weight=getattr(args, "guidance_weight", -1.0),
         gd_steps=getattr(args, "num_gd_steps", -1),

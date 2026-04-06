@@ -40,6 +40,24 @@ ENSEMBLE_SIZE=1  # 1 sample per GPU, 4 GPUs = 4 total ensemble members
 
 cd "$SAMPLEWORKS_DIR"
 
+## Ensure the Boltz2 mols/ directory exists next to the checkpoint.
+## The Boltz wrapper derives its cache dir from Path(checkpoint).parent and
+## loads per-component molecule pickles from "<cache>/mols/". Without it
+## load_molecules() raises "CCD component ALA not found".
+## boltz.main.download_boltz2() times out on this cluster, so fetch just
+## the mols tarball directly from HuggingFace.
+CHECKPOINT_DIR="$(dirname "$CHECKPOINT")"
+MOLS_DIR="${CHECKPOINT_DIR}/mols"
+if [ ! -d "$MOLS_DIR" ] || [ -z "$(ls -A "$MOLS_DIR" 2>/dev/null || true)" ]; then
+    echo "mols/ not found at $MOLS_DIR — downloading mols.tar from HuggingFace"
+    curl -L --retry 5 --retry-delay 10 \
+        -o "${CHECKPOINT_DIR}/mols.tar" \
+        "https://huggingface.co/boltz-community/boltz-2/resolve/main/mols.tar"
+    tar -xf "${CHECKPOINT_DIR}/mols.tar" -C "$CHECKPOINT_DIR"
+    rm -f "${CHECKPOINT_DIR}/mols.tar"
+    echo "mols/ ready at $MOLS_DIR"
+fi
+
 ## Launch 1 ensemble member per GPU in parallel
 for GPU_ID in 0 1 2 3; do
     CUDA_VISIBLE_DEVICES=$GPU_ID \
@@ -61,4 +79,7 @@ echo "All 4 ensemble members complete."
 
 ## End-of-job summary
 echo "Job $SLURM_JOB_ID complete."
-sacct -j "$SLURM_JOB_ID" --format=JobID,Elapsed,MaxRSS,MaxVMSize,State
+## sacct lives on login nodes only on Expanse; don't fail the job if missing.
+if command -v sacct >/dev/null 2>&1; then
+    sacct -j "$SLURM_JOB_ID" --format=JobID,Elapsed,MaxRSS,MaxVMSize,State || true
+fi
