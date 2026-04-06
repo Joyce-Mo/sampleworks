@@ -6,9 +6,9 @@
 #SBATCH --gpus=a100:4
 #SBATCH --mem=128G
 #SBATCH --time=1:00:00
-#SBATCH -J boltz2_guidance_4012026_
-#SBATCH -o logs/boltz2_guidance_4012026_%j.out
-#SBATCH -e logs/boltz2_guidance_4012026_%j.err
+#SBATCH -J boltz2_guidance_4052026_
+#SBATCH -o logs/boltz2_guidance_4052026_%j.out
+#SBATCH -e logs/boltz2_guidance_4052026_%j.err
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
@@ -21,8 +21,8 @@ nvidia-smi
 ## Load modules
 module purge
 module load gpu/0.15.4
-module load gcc/10.2.0/npcyll4
-module load cuda/12.2.1
+module load gcc/7.2.0
+module load cuda/11.0.2
 
 ## Environment variables
 export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
