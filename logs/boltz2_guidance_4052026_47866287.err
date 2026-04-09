@@ -1,0 +1,470 @@
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/build.ninja...
+Building extension module dilate_points_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module dilate_points_cuda...
+Loading extension module dilate_points_cuda...
+Loading extension module dilate_points_cuda...
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2506, in _run_ninja_build
+    subprocess.run(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2076, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2222, in _write_ninja_file_and_build_library
+    _run_ninja_build(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2522, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 'dilate_points_cuda'
+2026-04-06 00:54:39.092 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-06 00:54:39.092 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-06 00:54:39.092 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-06 00:54:39.092 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-06 00:54:39.211 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-06 00:54:39.211 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-06 00:54:39.211 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-06 00:54:39.212 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-06 00:54:39.213 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-06 00:54:39.213 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-06 00:54:39.213 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-06 00:54:39.213 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-06 00:54:39.491 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-06 00:54:39.491 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-06 00:54:39.491 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-06 00:54:39.491 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-06 00:54:39.491 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-06 00:54:39.491 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-06 00:54:39.491 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-06 00:54:39.491 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+2026-04-06 00:56:03.173 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-06 00:56:06.122 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:242 - Loading density map from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-06 00:56:06.297 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:245 - Setting up scattering parameters
+2026-04-06 00:56:06.363 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:252 - Selected 3239 atoms with occupancy > 0
+2026-04-06 00:56:06.364 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:254 - Creating reward function
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+2026-04-06 00:56:06.432 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:467 - Initializing pure guidance
+2026-04-06 00:56:06.433 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-06 00:56:06.433 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:480 - Running pure guidance using model with hash 1466014336314
+2026-04-06 00:56:06.436 | INFO     | sampleworks.utils.msa:_compute_msa:67 - Calling MSA server for target 8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e with 1 sequences
+2026-04-06 00:56:06.437 | INFO     | sampleworks.utils.msa:_compute_msa:68 - MSA server URL: https://api.colabfold.com
+2026-04-06 00:56:06.437 | INFO     | sampleworks.utils.msa:_compute_msa:69 - MSA pairing strategy: greedy
+2026-04-06 00:56:06.437 | INFO     | sampleworks.utils.msa:_compute_msa:81 - No authentication provided for MSA server
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?]SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?]COMPLETE:   0%|          | 0/150 [elapsed: 00:00 remaining: ?]COMPLETE: 100%|██████████| 150/150 [elapsed: 00:00 remaining: 00:00]COMPLETE: 100%|██████████| 150/150 [elapsed: 00:02 remaining: 00:00]
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/mmseqs2.py:281: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.
+  tar_gz.extractall(path)
+2026-04-06 00:56:08.901 | INFO     | sampleworks.utils.msa:_compute_msa:187 - Writing MSA for target 8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e sequence 0 to /home/jmo/.sampleworks/msa/0
+2026-04-06 00:56:08.933 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+2026-04-06 00:56:09.027 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:415 - Error running guidance: CCD component ALA not found! consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu0/run.log) for real errors.
+2026-04-06 00:56:09.088 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:416 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 481, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 74, in sample
+    features = model.featurize(structure)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 679, in featurize
+    self._setup_data_module(input_path, out_dir, num_workers=num_workers)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 592, in _setup_data_module
+    process_inputs(  # <-- writes processed files to out_dir
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/main.py", line 766, in process_inputs
+    ccd = load_canonicals(mol_dir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 56, in load_canonicals
+    return load_molecules(moldir, const.canonical_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 36, in load_molecules
+    raise ValueError(msg)
+ValueError: CCD component ALA not found!
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 481, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 74, in sample
+    features = model.featurize(structure)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 679, in featurize
+    self._setup_data_module(input_path, out_dir, num_workers=num_workers)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 592, in _setup_data_module
+    process_inputs(  # <-- writes processed files to out_dir
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/main.py", line 766, in process_inputs
+    ccd = load_canonicals(mol_dir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 56, in load_canonicals
+    return load_molecules(moldir, const.canonical_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 36, in load_molecules
+    raise ValueError(msg)
+ValueError: CCD component ALA not found!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 19, in <module>
+    main(guidance_args)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 14, in main
+    run_guidance(args, GuidanceType.PURE_GUIDANCE, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 417, in run_guidance
+    return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 562, in get_job_result
+    scaler=args.guidance_type,
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'guidance_type'. Did you mean: 'guidance_start'?
+2026-04-06 00:56:13.771 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-06 00:56:14.102 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-06 00:56:14.562 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-06 00:56:15.726 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:242 - Loading density map from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-06 00:56:15.744 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:245 - Setting up scattering parameters
+2026-04-06 00:56:15.746 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:252 - Selected 3239 atoms with occupancy > 0
+2026-04-06 00:56:15.747 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:254 - Creating reward function
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+2026-04-06 00:56:15.759 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:467 - Initializing pure guidance
+2026-04-06 00:56:15.759 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-06 00:56:15.759 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:480 - Running pure guidance using model with hash 1464999057521
+2026-04-06 00:56:15.760 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+2026-04-06 00:56:15.764 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:415 - Error running guidance: CCD component ALA not found! consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu2/run.log) for real errors.
+2026-04-06 00:56:15.768 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:416 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 481, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 74, in sample
+    features = model.featurize(structure)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 679, in featurize
+    self._setup_data_module(input_path, out_dir, num_workers=num_workers)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 592, in _setup_data_module
+    process_inputs(  # <-- writes processed files to out_dir
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/main.py", line 766, in process_inputs
+    ccd = load_canonicals(mol_dir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 56, in load_canonicals
+    return load_molecules(moldir, const.canonical_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 36, in load_molecules
+    raise ValueError(msg)
+ValueError: CCD component ALA not found!
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 481, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 74, in sample
+    features = model.featurize(structure)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 679, in featurize
+    self._setup_data_module(input_path, out_dir, num_workers=num_workers)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 592, in _setup_data_module
+    process_inputs(  # <-- writes processed files to out_dir
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/main.py", line 766, in process_inputs
+    ccd = load_canonicals(mol_dir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 56, in load_canonicals
+    return load_molecules(moldir, const.canonical_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 36, in load_molecules
+    raise ValueError(msg)
+ValueError: CCD component ALA not found!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 19, in <module>
+    main(guidance_args)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 14, in main
+    run_guidance(args, GuidanceType.PURE_GUIDANCE, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 417, in run_guidance
+    return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 562, in get_job_result
+    scaler=args.guidance_type,
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'guidance_type'. Did you mean: 'guidance_start'?
+2026-04-06 00:56:16.057 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:242 - Loading density map from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-06 00:56:16.075 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:245 - Setting up scattering parameters
+2026-04-06 00:56:16.077 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:252 - Selected 3239 atoms with occupancy > 0
+2026-04-06 00:56:16.078 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:254 - Creating reward function
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+2026-04-06 00:56:16.089 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:467 - Initializing pure guidance
+2026-04-06 00:56:16.089 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-06 00:56:16.089 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:480 - Running pure guidance using model with hash 1466014336356
+2026-04-06 00:56:16.090 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+2026-04-06 00:56:16.092 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:415 - Error running guidance: CCD component ALA not found! consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu1/run.log) for real errors.
+2026-04-06 00:56:16.095 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:416 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 481, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 74, in sample
+    features = model.featurize(structure)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 679, in featurize
+    self._setup_data_module(input_path, out_dir, num_workers=num_workers)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 592, in _setup_data_module
+    process_inputs(  # <-- writes processed files to out_dir
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/main.py", line 766, in process_inputs
+    ccd = load_canonicals(mol_dir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 56, in load_canonicals
+    return load_molecules(moldir, const.canonical_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 36, in load_molecules
+    raise ValueError(msg)
+ValueError: CCD component ALA not found!
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 481, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 74, in sample
+    features = model.featurize(structure)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 679, in featurize
+    self._setup_data_module(input_path, out_dir, num_workers=num_workers)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 592, in _setup_data_module
+    process_inputs(  # <-- writes processed files to out_dir
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/main.py", line 766, in process_inputs
+    ccd = load_canonicals(mol_dir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 56, in load_canonicals
+    return load_molecules(moldir, const.canonical_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 36, in load_molecules
+    raise ValueError(msg)
+ValueError: CCD component ALA not found!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 19, in <module>
+    main(guidance_args)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 14, in main
+    run_guidance(args, GuidanceType.PURE_GUIDANCE, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 417, in run_guidance
+    return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 562, in get_job_result
+    scaler=args.guidance_type,
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'guidance_type'. Did you mean: 'guidance_start'?
+2026-04-06 00:56:16.722 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:242 - Loading density map from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-06 00:56:16.739 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:245 - Setting up scattering parameters
+2026-04-06 00:56:16.741 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:252 - Selected 3239 atoms with occupancy > 0
+2026-04-06 00:56:16.742 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:254 - Creating reward function
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+2026-04-06 00:56:16.757 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:467 - Initializing pure guidance
+2026-04-06 00:56:16.757 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-06 00:56:16.757 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:480 - Running pure guidance using model with hash 1464995761021
+2026-04-06 00:56:16.757 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+2026-04-06 00:56:16.759 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:415 - Error running guidance: CCD component ALA not found! consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu3/run.log) for real errors.
+2026-04-06 00:56:16.761 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:416 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 481, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 74, in sample
+    features = model.featurize(structure)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 679, in featurize
+    self._setup_data_module(input_path, out_dir, num_workers=num_workers)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 592, in _setup_data_module
+    process_inputs(  # <-- writes processed files to out_dir
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/main.py", line 766, in process_inputs
+    ccd = load_canonicals(mol_dir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 56, in load_canonicals
+    return load_molecules(moldir, const.canonical_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 36, in load_molecules
+    raise ValueError(msg)
+ValueError: CCD component ALA not found!
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 481, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 74, in sample
+    features = model.featurize(structure)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 679, in featurize
+    self._setup_data_module(input_path, out_dir, num_workers=num_workers)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/models/boltz/wrapper.py", line 592, in _setup_data_module
+    process_inputs(  # <-- writes processed files to out_dir
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/lightning_utilities/core/rank_zero.py", line 41, in wrapped_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/main.py", line 766, in process_inputs
+    ccd = load_canonicals(mol_dir)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 56, in load_canonicals
+    return load_molecules(moldir, const.canonical_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/boltz/data/mol.py", line 36, in load_molecules
+    raise ValueError(msg)
+ValueError: CCD component ALA not found!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 19, in <module>
+    main(guidance_args)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/scripts/boltz2_pure_guidance.py", line 14, in main
+    run_guidance(args, GuidanceType.PURE_GUIDANCE, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 417, in run_guidance
+    return get_job_result(args, device, started_at, datetime.now(), 1, "failed")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 562, in get_job_result
+    scaler=args.guidance_type,
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'guidance_type'. Did you mean: 'guidance_start'?
+/cm/local/apps/slurm/var/spool/job47866287/slurm_script: line 64: sacct: command not found

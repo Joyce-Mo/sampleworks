@@ -1,0 +1,387 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1367  100  1367    0     0  12427      0 --:--:-- --:--:-- --:--:-- 12427
+  0 1769M    0 1054k    0     0  1474k      0  0:20:29 --:--:--  0:20:29 1474k 25 1769M   25  454M    0     0   277M      0  0:00:06  0:00:01  0:00:05  492M 53 1769M   53  951M    0     0   361M      0  0:00:04  0:00:02  0:00:02  495M 78 1769M   78 1382M    0     0   380M      0  0:00:04  0:00:03  0:00:01  473M100 1769M  100 1769M    0     0   396M      0  0:00:04  0:00:04 --:--:--  472M
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Using /home/jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/build.ninja...
+Building extension module dilate_points_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module dilate_points_cuda...
+Loading extension module dilate_points_cuda...
+Loading extension module dilate_points_cuda...
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2103, in _jit_compile
+    return _import_module_from_library(name, build_directory, is_python_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2542, in _import_module_from_library
+    module = importlib.util.module_from_spec(spec)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 813, in module_from_spec
+  File "<frozen importlib._bootstrap_external>", line 1293, in create_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+ImportError: /home/jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/dilate_points_cuda.so: cannot open shared object file: No such file or directory
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2506, in _run_ninja_build
+    subprocess.run(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/__init__.py", line 36, in <module>
+    dilate_points_cuda = load(
+                         ^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 1623, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2076, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2222, in _write_ninja_file_and_build_library
+    _run_ninja_build(
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2522, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 'dilate_points_cuda'
+2026-04-08 10:14:12.452 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-08 10:14:12.452 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-08 10:14:12.452 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-08 10:14:12.452 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-08 10:14:12.547 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-08 10:14:12.547 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-08 10:14:12.547 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-08 10:14:12.547 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:51 - Failed to import Protenix, hopefully you're running a different model
+2026-04-08 10:14:12.548 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-08 10:14:12.548 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-08 10:14:12.548 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-08 10:14:12.548 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:56 - Failed to import RF3, hopefully you're running a different model
+2026-04-08 10:14:12.931 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-08 10:14:12.931 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-08 10:14:12.931 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-08 10:14:12.931 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-08 10:14:12.931 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-08 10:14:12.932 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+2026-04-08 10:14:12.931 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:179 - Using device: cuda:0
+2026-04-08 10:14:12.932 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:203 - Loading Boltz2 model from /expanse/lustre/scratch/jmo/temp_project/sampleworks/boltz2_conf.ckpt
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+2026-04-08 10:15:48.108 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+2026-04-08 10:15:49.634 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+2026-04-08 10:15:50.137 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+2026-04-08 10:15:50.585 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:234 - Loading structure from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+Field charge not found in file, ignoring.
+Field charge not found in file, ignoring.
+Field charge not found in file, ignoring.
+2026-04-08 10:15:52.620 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:242 - Loading density map from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-08 10:15:52.620 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:242 - Loading density map from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-08 10:15:52.620 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:242 - Loading density map from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-08 10:15:52.621 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:242 - Loading density map from /expanse/lustre/scratch/jmo/temp_project/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-08 10:15:52.871 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:245 - Setting up scattering parameters
+2026-04-08 10:15:52.871 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:245 - Setting up scattering parameters
+2026-04-08 10:15:52.871 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:245 - Setting up scattering parameters
+2026-04-08 10:15:52.872 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:245 - Setting up scattering parameters
+2026-04-08 10:15:52.925 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:252 - Selected 3239 atoms with occupancy > 0
+2026-04-08 10:15:52.925 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:252 - Selected 3239 atoms with occupancy > 0
+2026-04-08 10:15:52.925 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:252 - Selected 3239 atoms with occupancy > 0
+2026-04-08 10:15:52.925 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:252 - Selected 3239 atoms with occupancy > 0
+2026-04-08 10:15:52.933 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:254 - Creating reward function
+2026-04-08 10:15:52.934 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:254 - Creating reward function
+2026-04-08 10:15:52.939 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:254 - Creating reward function
+2026-04-08 10:15:52.939 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:254 - Creating reward function
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+2026-04-08 10:15:53.000 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:471 - Initializing pure guidance
+2026-04-08 10:15:53.000 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:471 - Initializing pure guidance
+2026-04-08 10:15:53.001 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-08 10:15:53.001 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-08 10:15:53.001 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:471 - Initializing pure guidance
+2026-04-08 10:15:53.001 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:471 - Initializing pure guidance
+2026-04-08 10:15:53.001 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:484 - Running pure guidance using model with hash 1466014426387
+2026-04-08 10:15:53.001 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:484 - Running pure guidance using model with hash 1465013982435
+2026-04-08 10:15:53.001 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-08 10:15:53.001 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-08 10:15:53.001 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:484 - Running pure guidance using model with hash 1464997024914
+2026-04-08 10:15:53.001 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:484 - Running pure guidance using model with hash 1465013972171
+2026-04-08 10:15:53.041 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+2026-04-08 10:15:53.041 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+2026-04-08 10:15:53.041 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+2026-04-08 10:15:53.041 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:01<00:00,  1.40s/it]100%|██████████| 1/1 [00:01<00:00,  1.40s/it]100%|██████████| 1/1 [00:01<00:00,  1.40s/it]100%|██████████| 1/1 [00:01<00:00,  1.40s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.40s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.40s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.40s/it]100%|██████████| 1/1 [00:01<00:00,  1.40s/it]
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3500406) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3500405) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3500404) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3500407) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+2026-04-08 10:16:16.025 | INFO     | sampleworks.eval.structure_utils:process_structure_to_trajectory_input:194 - Atom count mismatch: model=3239, structure=3239, common=3232
+2026-04-08 10:16:16.035 | INFO     | sampleworks.eval.structure_utils:process_structure_to_trajectory_input:194 - Atom count mismatch: model=3239, structure=3239, common=3232
+2026-04-08 10:16:16.150 | INFO     | sampleworks.eval.structure_utils:process_structure_to_trajectory_input:194 - Atom count mismatch: model=3239, structure=3239, common=3232
+2026-04-08 10:16:16.218 | INFO     | sampleworks.eval.structure_utils:process_structure_to_trajectory_input:194 - Atom count mismatch: model=3239, structure=3239, common=3232
+  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/frame_transforms.py:201: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /home/jmo/.cache/torch/kernels. This warning will appear only once per process. (Triggered internally at /pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1491.)
+  det = backend.linalg.det(rotation)
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/frame_transforms.py:201: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /home/jmo/.cache/torch/kernels. This warning will appear only once per process. (Triggered internally at /pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1491.)
+  det = backend.linalg.det(rotation)
+/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/frame_transforms.py:201: UserWarning: Specified kernel cache directory could not be created! This disables kernel caching. Specified directory is /home/jmo/.cache/torch/kernels. This warning will appear only once per process. (Triggered internally at /pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1491.)
+  det = backend.linalg.det(rotation)
+  0%|          | 1/200 [00:03<11:09,  3.36s/it]  0%|          | 1/200 [00:03<11:09,  3.36s/it]  0%|          | 1/200 [00:03<11:09,  3.36s/it]  0%|          | 1/200 [00:03<11:15,  3.40s/it]  2%|▏         | 3/200 [00:03<02:59,  1.10it/s]  2%|▏         | 3/200 [00:03<03:00,  1.09it/s]  2%|▏         | 3/200 [00:03<03:00,  1.09it/s]  2%|▏         | 3/200 [00:03<03:01,  1.09it/s]  3%|▎         | 6/200 [00:03<01:13,  2.66it/s]  2%|▎         | 5/200 [00:03<01:32,  2.11it/s]  3%|▎         | 6/200 [00:03<01:13,  2.65it/s]  3%|▎         | 6/200 [00:03<01:14,  2.61it/s]  4%|▍         | 9/200 [00:03<00:41,  4.58it/s]  4%|▍         | 8/200 [00:03<00:47,  4.08it/s]  4%|▍         | 9/200 [00:03<00:41,  4.56it/s]  4%|▍         | 9/200 [00:03<00:42,  4.51it/s]  6%|▌         | 12/200 [00:03<00:27,  6.85it/s]  6%|▌         | 11/200 [00:03<00:29,  6.41it/s]  6%|▌         | 12/200 [00:03<00:27,  6.83it/s]  6%|▌         | 12/200 [00:03<00:27,  6.76it/s]  8%|▊         | 15/200 [00:03<00:19,  9.42it/s]  7%|▋         | 14/200 [00:03<00:20,  9.02it/s]  8%|▊         | 15/200 [00:03<00:19,  9.38it/s]  8%|▊         | 15/200 [00:03<00:19,  9.29it/s]  9%|▉         | 18/200 [00:04<00:15, 12.12it/s]  8%|▊         | 17/200 [00:04<00:15, 11.78it/s]  9%|▉         | 18/200 [00:04<00:15, 12.08it/s]  9%|▉         | 18/200 [00:04<00:15, 11.98it/s] 10%|█         | 21/200 [00:04<00:12, 14.81it/s] 10%|█         | 20/200 [00:04<00:12, 14.50it/s] 10%|█         | 21/200 [00:04<00:12, 14.76it/s] 10%|█         | 21/200 [00:04<00:12, 14.64it/s] 12%|█▏        | 24/200 [00:04<00:10, 17.33it/s] 12%|█▏        | 23/200 [00:04<00:10, 17.06it/s] 12%|█▏        | 24/200 [00:04<00:10, 17.27it/s] 12%|█▏        | 24/200 [00:04<00:10, 17.14it/s] 14%|█▎        | 27/200 [00:04<00:08, 19.53it/s] 13%|█▎        | 26/200 [00:04<00:09, 19.30it/s] 14%|█▎        | 27/200 [00:04<00:08, 19.46it/s] 14%|█▎        | 27/200 [00:04<00:08, 19.36it/s] 15%|█▌        | 30/200 [00:04<00:07, 21.36it/s] 14%|█▍        | 29/200 [00:04<00:08, 21.18it/s] 15%|█▌        | 30/200 [00:04<00:07, 21.32it/s] 15%|█▌        | 30/200 [00:04<00:08, 21.21it/s] 16%|█▋        | 33/200 [00:04<00:07, 22.84it/s] 16%|█▌        | 32/200 [00:04<00:07, 22.67it/s] 16%|█▋        | 33/200 [00:04<00:07, 22.79it/s] 16%|█▋        | 33/200 [00:04<00:07, 22.69it/s] 18%|█▊        | 36/200 [00:04<00:06, 24.01it/s] 18%|█▊        | 35/200 [00:04<00:06, 23.82it/s] 18%|█▊        | 36/200 [00:04<00:06, 23.93it/s] 18%|█▊        | 36/200 [00:04<00:06, 23.84it/s] 20%|█▉        | 39/200 [00:04<00:06, 24.84it/s] 19%|█▉        | 38/200 [00:04<00:06, 24.66it/s] 20%|█▉        | 39/200 [00:04<00:06, 24.79it/s] 20%|█▉        | 39/200 [00:04<00:06, 24.72it/s] 21%|██        | 42/200 [00:04<00:06, 25.50it/s] 20%|██        | 41/200 [00:04<00:06, 25.34it/s] 21%|██        | 42/200 [00:04<00:06, 25.43it/s] 21%|██        | 42/200 [00:04<00:06, 25.37it/s] 22%|██▎       | 45/200 [00:05<00:05, 25.98it/s] 22%|██▏       | 44/200 [00:05<00:06, 25.67it/s] 22%|██▎       | 45/200 [00:05<00:05, 25.90it/s] 22%|██▎       | 45/200 [00:05<00:05, 25.86it/s] 24%|██▍       | 48/200 [00:05<00:05, 26.31it/s] 24%|██▎       | 47/200 [00:05<00:05, 26.05it/s] 24%|██▍       | 48/200 [00:05<00:05, 26.25it/s] 24%|██▍       | 48/200 [00:05<00:05, 26.18it/s] 26%|██▌       | 51/200 [00:05<00:05, 26.53it/s] 25%|██▌       | 50/200 [00:05<00:05, 26.29it/s] 26%|██▌       | 51/200 [00:05<00:05, 26.48it/s] 26%|██▌       | 51/200 [00:05<00:05, 26.44it/s] 27%|██▋       | 54/200 [00:05<00:05, 26.70it/s] 26%|██▋       | 53/200 [00:05<00:05, 26.48it/s] 27%|██▋       | 54/200 [00:05<00:05, 26.68it/s] 27%|██▋       | 54/200 [00:05<00:05, 26.58it/s] 28%|██▊       | 57/200 [00:05<00:05, 26.80it/s] 28%|██▊       | 56/200 [00:05<00:05, 26.60it/s] 28%|██▊       | 57/200 [00:05<00:05, 26.77it/s] 28%|██▊       | 57/200 [00:05<00:05, 26.71it/s] 30%|███       | 60/200 [00:05<00:05, 26.88it/s] 30%|██▉       | 59/200 [00:05<00:05, 26.71it/s] 30%|███       | 60/200 [00:05<00:05, 26.86it/s] 30%|███       | 60/200 [00:05<00:05, 26.77it/s] 32%|███▏      | 63/200 [00:05<00:05, 26.95it/s] 32%|███▏      | 63/200 [00:05<00:05, 26.92it/s] 31%|███       | 62/200 [00:05<00:05, 26.72it/s] 32%|███▏      | 63/200 [00:05<00:05, 26.85it/s] 33%|███▎      | 66/200 [00:05<00:04, 26.99it/s] 33%|███▎      | 66/200 [00:05<00:04, 26.95it/s] 32%|███▎      | 65/200 [00:05<00:05, 26.79it/s] 33%|███▎      | 66/200 [00:05<00:04, 26.88it/s] 34%|███▍      | 69/200 [00:05<00:04, 27.03it/s] 34%|███▍      | 69/200 [00:05<00:04, 26.96it/s] 34%|███▍      | 68/200 [00:05<00:04, 26.82it/s] 34%|███▍      | 69/200 [00:05<00:04, 26.93it/s] 36%|███▌      | 72/200 [00:06<00:04, 27.02it/s] 36%|███▌      | 72/200 [00:06<00:04, 26.99it/s] 36%|███▌      | 71/200 [00:06<00:04, 26.86it/s] 36%|███▌      | 72/200 [00:06<00:04, 26.92it/s] 38%|███▊      | 75/200 [00:06<00:04, 27.04it/s] 38%|███▊      | 75/200 [00:06<00:04, 27.02it/s] 37%|███▋      | 74/200 [00:06<00:04, 26.84it/s] 38%|███▊      | 75/200 [00:06<00:04, 26.95it/s] 39%|███▉      | 78/200 [00:06<00:04, 27.05it/s] 39%|███▉      | 78/200 [00:06<00:04, 27.01it/s] 38%|███▊      | 77/200 [00:06<00:04, 26.89it/s] 39%|███▉      | 78/200 [00:06<00:04, 26.95it/s] 40%|████      | 81/200 [00:06<00:04, 27.09it/s] 40%|████      | 81/200 [00:06<00:04, 27.03it/s] 40%|████      | 80/200 [00:06<00:04, 26.88it/s] 40%|████      | 81/200 [00:06<00:04, 26.97it/s] 42%|████▏     | 84/200 [00:06<00:04, 27.07it/s] 42%|████▏     | 84/200 [00:06<00:04, 27.02it/s] 42%|████▏     | 83/200 [00:06<00:04, 26.91it/s] 42%|████▏     | 84/200 [00:06<00:04, 26.95it/s] 44%|████▎     | 87/200 [00:06<00:04, 27.07it/s] 44%|████▎     | 87/200 [00:06<00:04, 27.03it/s] 43%|████▎     | 86/200 [00:06<00:04, 26.89it/s] 44%|████▎     | 87/200 [00:06<00:04, 26.95it/s] 45%|████▌     | 90/200 [00:06<00:04, 27.04it/s] 45%|████▌     | 90/200 [00:06<00:04, 27.04it/s] 44%|████▍     | 89/200 [00:06<00:04, 26.91it/s] 45%|████▌     | 90/200 [00:06<00:04, 26.94it/s] 46%|████▋     | 93/200 [00:06<00:03, 27.06it/s] 46%|████▋     | 93/200 [00:06<00:03, 27.05it/s] 46%|████▌     | 92/200 [00:06<00:04, 26.87it/s] 46%|████▋     | 93/200 [00:06<00:03, 26.97it/s] 48%|████▊     | 96/200 [00:06<00:03, 27.06it/s] 48%|████▊     | 96/200 [00:06<00:03, 27.04it/s] 48%|████▊     | 95/200 [00:06<00:03, 26.89it/s] 48%|████▊     | 96/200 [00:06<00:03, 26.96it/s] 50%|████▉     | 99/200 [00:07<00:03, 27.08it/s] 50%|████▉     | 99/200 [00:07<00:03, 27.06it/s] 49%|████▉     | 98/200 [00:07<00:03, 26.85it/s] 50%|████▉     | 99/200 [00:07<00:03, 26.95it/s] 51%|█████     | 102/200 [00:07<00:03, 27.04it/s] 51%|█████     | 102/200 [00:07<00:03, 27.04it/s] 50%|█████     | 101/200 [00:07<00:03, 26.88it/s] 51%|█████     | 102/200 [00:07<00:03, 26.95it/s] 52%|█████▎    | 105/200 [00:07<00:03, 27.00it/s] 52%|█████▎    | 105/200 [00:07<00:03, 27.04it/s] 52%|█████▏    | 104/200 [00:07<00:03, 26.82it/s] 52%|█████▎    | 105/200 [00:07<00:03, 26.96it/s] 54%|█████▍    | 108/200 [00:07<00:03, 27.02it/s] 54%|█████▍    | 108/200 [00:07<00:03, 27.02it/s] 54%|█████▎    | 107/200 [00:07<00:03, 26.85it/s] 54%|█████▍    | 108/200 [00:07<00:03, 26.96it/s] 56%|█████▌    | 111/200 [00:07<00:03, 27.01it/s] 56%|█████▌    | 111/200 [00:07<00:03, 27.04it/s] 55%|█████▌    | 110/200 [00:07<00:03, 26.83it/s] 56%|█████▌    | 111/200 [00:07<00:03, 26.95it/s] 57%|█████▋    | 114/200 [00:07<00:03, 27.03it/s] 57%|█████▋    | 114/200 [00:07<00:03, 27.02it/s] 56%|█████▋    | 113/200 [00:07<00:03, 26.87it/s] 57%|█████▋    | 114/200 [00:07<00:03, 26.93it/s] 58%|█████▊    | 117/200 [00:07<00:03, 27.01it/s] 58%|█████▊    | 117/200 [00:07<00:03, 27.02it/s] 58%|█████▊    | 116/200 [00:07<00:03, 26.83it/s] 58%|█████▊    | 117/200 [00:07<00:03, 26.94it/s] 60%|██████    | 120/200 [00:07<00:02, 27.04it/s] 60%|██████    | 120/200 [00:07<00:02, 27.00it/s] 60%|█████▉    | 119/200 [00:07<00:03, 26.85it/s] 60%|██████    | 120/200 [00:07<00:02, 26.84it/s] 62%|██████▏   | 123/200 [00:07<00:02, 27.02it/s] 62%|██████▏   | 123/200 [00:07<00:02, 27.01it/s] 61%|██████    | 122/200 [00:07<00:02, 26.83it/s] 62%|██████▏   | 123/200 [00:07<00:02, 26.84it/s] 63%|██████▎   | 126/200 [00:08<00:02, 27.05it/s] 63%|██████▎   | 126/200 [00:08<00:02, 27.02it/s] 62%|██████▎   | 125/200 [00:08<00:02, 26.83it/s] 63%|██████▎   | 126/200 [00:08<00:02, 26.87it/s] 64%|██████▍   | 129/200 [00:08<00:02, 27.00it/s] 64%|██████▍   | 129/200 [00:08<00:02, 27.02it/s] 64%|██████▍   | 128/200 [00:08<00:02, 26.80it/s] 64%|██████▍   | 129/200 [00:08<00:02, 26.88it/s] 65%|██████▌   | 130/200 [00:08<00:04, 15.44it/s] 65%|██████▌   | 130/200 [00:08<00:04, 15.44it/s] 65%|██████▌   | 130/200 [00:08<00:04, 15.44it/s]
+
+ 65%|██████▌   | 130/200 [00:08<00:04, 15.44it/s]
+
+2026-04-08 10:16:26.932 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:417 - Error running guidance: CUDA is not available. consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu2/run.log) for real errors.
+2026-04-08 10:16:26.932 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:417 - Error running guidance: CUDA is not available. consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu0/run.log) for real errors.
+2026-04-08 10:16:26.932 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:417 - Error running guidance: CUDA is not available. consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu1/run.log) for real errors.
+2026-04-08 10:16:26.932 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:417 - Error running guidance: CUDA is not available. consult logs (/expanse/lustre/scratch/jmo/temp_project/sampleworks/output/boltz2_pure_guidance/gpu3/run.log) for real errors.
+2026-04-08 10:16:27.102 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:418 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 485, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 120, in sample
+    step_output = sampler.step(
+                  ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/samplers/edm.py", line 504, in step
+    delta, loss, proposal_shift = self._apply_scaler_guidance(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/samplers/edm.py", line 335, in _apply_scaler_guidance
+    guidance_direction, loss = scaler.scale(
+                               ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/step_scalers.py", line 137, in scale
+    loss = context.reward(
+           ^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/rewards/real_space_density.py", line 311, in __call__
+    density: torch.Tensor = self.transformer(
+                            ^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py", line 588, in forward
+    final_density = dilate_atom_centric(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/dilate_points_cuda.py", line 340, in dilate_atom_centric
+    return DilateAtomCentricCUDA.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/dilate_points_cuda.py", line 78, in forward
+    raise RuntimeError("CUDA is not available.")
+RuntimeError: CUDA is not available.
+
+2026-04-08 10:16:27.102 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:418 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 485, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 120, in sample
+    step_output = sampler.step(
+                  ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/samplers/edm.py", line 504, in step
+    delta, loss, proposal_shift = self._apply_scaler_guidance(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/samplers/edm.py", line 335, in _apply_scaler_guidance
+    guidance_direction, loss = scaler.scale(
+                               ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/step_scalers.py", line 137, in scale
+    loss = context.reward(
+           ^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/rewards/real_space_density.py", line 311, in __call__
+    density: torch.Tensor = self.transformer(
+                            ^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py", line 588, in forward
+    final_density = dilate_atom_centric(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/dilate_points_cuda.py", line 340, in dilate_atom_centric
+    return DilateAtomCentricCUDA.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/dilate_points_cuda.py", line 78, in forward
+    raise RuntimeError("CUDA is not available.")
+RuntimeError: CUDA is not available.
+
+2026-04-08 10:16:27.102 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:418 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 485, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 120, in sample
+    step_output = sampler.step(
+                  ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/samplers/edm.py", line 504, in step
+    delta, loss, proposal_shift = self._apply_scaler_guidance(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/samplers/edm.py", line 335, in _apply_scaler_guidance
+    guidance_direction, loss = scaler.scale(
+                               ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/step_scalers.py", line 137, in scale
+    loss = context.reward(
+           ^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/rewards/real_space_density.py", line 311, in __call__
+    density: torch.Tensor = self.transformer(
+                            ^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py", line 588, in forward
+    final_density = dilate_atom_centric(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/dilate_points_cuda.py", line 340, in dilate_atom_centric
+    return DilateAtomCentricCUDA.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/dilate_points_cuda.py", line 78, in forward
+    raise RuntimeError("CUDA is not available.")
+RuntimeError: CUDA is not available.
+
+2026-04-08 10:16:27.103 | ERROR    | sampleworks.utils.guidance_script_utils:run_guidance:418 - Traceback (most recent call last):
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 411, in run_guidance
+    _run_guidance(args, guidance_type, model_wrapper, device)
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/utils/guidance_script_utils.py", line 485, in _run_guidance
+    result = guidance.sample(
+             ^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/pure_guidance.py", line 120, in sample
+    step_output = sampler.step(
+                  ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/samplers/edm.py", line 504, in step
+    delta, loss, proposal_shift = self._apply_scaler_guidance(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/samplers/edm.py", line 335, in _apply_scaler_guidance
+    guidance_direction, loss = scaler.scale(
+                               ^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/scalers/step_scalers.py", line 137, in scale
+    loss = context.reward(
+           ^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/rewards/real_space_density.py", line 311, in __call__
+    density: torch.Tensor = self.transformer(
+                            ^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py", line 588, in forward
+    final_density = dilate_atom_centric(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/dilate_points_cuda.py", line 340, in dilate_atom_centric
+    return DilateAtomCentricCUDA.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/expanse/lustre/scratch/jmo/temp_project/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/dilate_points_cuda.py", line 78, in forward
+    raise RuntimeError("CUDA is not available.")
+RuntimeError: CUDA is not available.
+
