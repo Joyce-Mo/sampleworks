@@ -1,16 +1,17 @@
-#SBATCH --job-name=bolts_guidance_sampleworks_03202026
-#SBATCH --output=bolts_guidance_sampleworks_03202026.o%j
-#SBATCH --error=bolts_guidance_sampleworks_03202026.e%j
-#SBATCH --account=fc_actin
-#SBATCH --partition=savio3_gpu
-#SBATCH --time=48:00:00
+#!/bin/bash
+#SBATCH -A ucb368      
 #SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --gres=gpu:A40:1
-#SBATCH --qos=a40_gpu3_normal
-#SBATCH --mail-type=all
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=10
+#SBATCH --gpus=a100:4
+#SBATCH --mem=48G
+#SBATCH --time=00:10:00
+#SBATCH -J baseline_protpardelle_guidance_$(date +%Y-%m-%d)
+#SBATCH -o baseline_protpardelle_guidance_$(date +%Y-%m-%d)_%j.out
+#SBATCH -e baseline_protpardelle_guidance_$(date +%Y-%m-%d)_%j.err
+#SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
+#SBATCH --mail-type=all
 
 set -euo pipefail
 date
@@ -24,8 +25,8 @@ module list
 
 ## Configuration
 SAMPLEWORKS_DIR="$HOME/sampleworks"
-PROTPARDELLE_CONFIG="$HOME/.protpardelle/config.yaml"
-PROTPARDELLE_CHECKPOINT="$HOME/.protpardelle/model.pth"
+PROTPARDELLE_CONFIG="/anvil/scratch/x-jmo/protpardelle_runs/cc89_anvil_16139230/cc89_anvil/config.yaml"
+PROTPARDELLE_CHECKPOINT="/anvil/scratch/x-jmo/protpardelle_runs/cc89_anvil_16139230/cc89_anvil/checkpoints/epoch44_training_state.pth"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
 DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 RESOLUTION=1.8
