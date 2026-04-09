@@ -1,17 +1,17 @@
 #!/bin/bash
-#SBATCH -A ucb368      
+#SBATCH -A bio260134-ai
+#SBATCH --job-name=baseline_protpardelle_guidance_%m%d%Y
+#SBATCH -p ai
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
-#SBATCH --cpus-per-task=10
-#SBATCH --gpus=a100:4
-#SBATCH --mem=48G
+#SBATCH --cpus-per-task=16
+#SBATCH --gpus-per-node=4
+#SBATCH --exclusive
 #SBATCH --time=00:10:00
-#SBATCH -J baseline_protpardelle_guidance_%m%d%Y
-#SBATCH -o baseline_protpardelle_guidance_%m%d%Y_%j.out
-#SBATCH -e baseline_protpardelle_guidance_%m%d%Y_%j.err
-#SBATCH -p gpu
+#SBATCH -o logs/baseline_protpardelle_guidance_%m%d%Y_%j.out
+#SBATCH -e logs/baseline_protpardelle_guidance_%m%d%Y_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
-#SBATCH --mail-type=all
+#SBATCH --mail-type=ALL
 
 set -euo pipefail
 date
