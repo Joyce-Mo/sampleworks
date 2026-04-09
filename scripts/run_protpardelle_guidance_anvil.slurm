@@ -6,9 +6,9 @@
 #SBATCH --gpus=a100:4
 #SBATCH --mem=48G
 #SBATCH --time=00:10:00
-#SBATCH -J baseline_protpardelle_guidance_$(date +%Y-%m-%d)
-#SBATCH -o baseline_protpardelle_guidance_$(date +%Y-%m-%d)_%j.out
-#SBATCH -e baseline_protpardelle_guidance_$(date +%Y-%m-%d)_%j.err
+#SBATCH -J baseline_protpardelle_guidance_%m%d%Y
+#SBATCH -o baseline_protpardelle_guidance_%m%d%Y_%j.out
+#SBATCH -e baseline_protpardelle_guidance_%m%d%Y_%j.err
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all
