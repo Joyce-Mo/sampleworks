@@ -42,7 +42,7 @@ from sampleworks.core.rewards.real_space_density import (
     RealSpaceRewardFunction,
     setup_scattering_params,
 )
-from sampleworks.core.samplers.edm import AF3EDMSampler
+from sampleworks.core.samplers.edm import AF3EDMSampler, EDMSamplerConfig
 from sampleworks.core.scalers.pure_guidance import PureGuidance
 from sampleworks.core.scalers.step_scalers import DataSpaceDPSScaler
 from sampleworks.models.protpardelle.wrapper import (
@@ -128,9 +128,7 @@ def main(args):
     xmap = XMap.fromfile(args.density, resolution=args.resolution)
 
     atom_array = structure["asym_unit"]
-    scattering_params = setup_scattering_params(
-        atom_array=atom_array, em_mode=args.em, device=device
-    )
+    scattering_params = setup_scattering_params(em_mode=args.em, device=device)
     selection_mask = atom_array.occupancy > 0
 
     reward_function = RealSpaceRewardFunction(
@@ -142,12 +140,16 @@ def main(args):
         device=device,
     )
 
-    # Sampler
+    # Sampler — AF3EDMSampler now takes a single EDMSamplerConfig (refactored
+    # in commit 406edd9). alignment_reverse_diffusion stays False since
+    # Protpardelle (unlike Boltz-1) wasn't trained with it.
     sampler = AF3EDMSampler(
-        device=str(device),
-        augmentation=args.augmentation,
-        align_to_input=args.align_to_input,
-        alignment_reverse_diffusion=False,  # not trained with this like Boltz
+        EDMSamplerConfig(
+            device=str(device),
+            augmentation=args.augmentation,
+            align_to_input=args.align_to_input,
+            alignment_reverse_diffusion=False,
+        )
     )
 
     # Step scaler

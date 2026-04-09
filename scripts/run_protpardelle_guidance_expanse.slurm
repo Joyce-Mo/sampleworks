@@ -5,10 +5,10 @@
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus=4
 #SBATCH --mem=92G
-#SBATCH --time=1:00:00
-#SBATCH -J protpardelle_guidance_4022026_
-#SBATCH -o logs/protpardelle_guidance_4022026_%j.out
-#SBATCH -e logs/protpardelle_guidance_4022026_%j.err
+#SBATCH --time=00:10:00
+#SBATCH -J protpardelle_guidance_%m%d%Y
+#SBATCH -o logs/protpardelle_guidance_%m%d%Y_%j.out
+#SBATCH -e logs/protpardelle_guidance_%m%d%Y_%j.err
 #SBATCH -p gpu
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=all

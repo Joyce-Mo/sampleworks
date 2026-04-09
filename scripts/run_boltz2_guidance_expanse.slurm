@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus=a100:4
 #SBATCH --mem=128G
-#SBATCH --time=1:00:00
+#SBATCH --time=00:10:00
 #SBATCH -J boltz2_guidance_4052026_
 #SBATCH -o logs/boltz2_guidance_4052026_%j.out
 #SBATCH -e logs/boltz2_guidance_4052026_%j.err
@@ -19,14 +19,16 @@ hostname
 nvidia-smi
 
 ## Load modules
+## NOTE: PyTorch in the pixi `boltz` env is built against CUDA 12.6 (py312_cu126),
+## so the system cuda/11.0.2 + gcc/7.2.0 combo we used previously caused the
+## dilate_points_cuda JIT compile to fail mid-run with "CUDA is not available".
+## The pixi env declares `cuda-toolkit >=12,<13`, so nvcc is provided by the
+## env itself — we just need a host compiler new enough for CUDA 12 and we
+## must NOT load an older system CUDA that shadows the env's nvcc/libs.
 module purge
 module load gpu/0.15.4
-module load gcc/7.2.0
-module load cuda/11.0.2
-
-## Environment variables
-export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
-export TORCH_CUDA_ARCH_LIST="7.0;8.0"
+module load gcc/10.2.0
+module load cuda/12.2.1
 
 ## Configuration
 SAMPLEWORKS_DIR="/expanse/lustre/scratch/jmo/temp_project/sampleworks"
@@ -39,6 +41,31 @@ GUIDANCE_START=130
 ENSEMBLE_SIZE=1  # 1 sample per GPU, 4 GPUs = 4 total ensemble members
 
 cd "$SAMPLEWORKS_DIR"
+
+## Point torch.utils.cpp_extension at the pixi-provided CUDA toolkit so the
+## dilate_points_cuda JIT build uses the same CUDA the boltz env's torch was
+## compiled against (cu126). Without this, torch falls back to whatever nvcc
+## is on PATH and the resulting .so fails to load (or never builds), which
+## surfaces later as `RuntimeError: CUDA is not available` from the custom op.
+PIXI_BOLTZ_PREFIX="${SAMPLEWORKS_DIR}/.pixi/envs/boltz"
+export CUDA_HOME="$PIXI_BOLTZ_PREFIX"
+export PATH="${PIXI_BOLTZ_PREFIX}/bin:${PATH}"
+export LD_LIBRARY_PATH="${PIXI_BOLTZ_PREFIX}/lib:${LD_LIBRARY_PATH:-}"
+## A single arch is enough for the a100 partition and avoids over-long JIT builds.
+export TORCH_CUDA_ARCH_LIST="8.0"
+## Give torch a writable kernel cache (the default ~/.cache/torch/kernels lives
+## on a read-only path on this node) and a per-job extensions dir so concurrent
+## GPU workers don't race on the same JIT build directory.
+export TORCH_EXTENSIONS_DIR="${SAMPLEWORKS_DIR}/.torch_extensions/${SLURM_JOB_ID:-local}"
+export PYTORCH_KERNEL_CACHE_PATH="${SAMPLEWORKS_DIR}/.torch_kernel_cache"
+mkdir -p "$TORCH_EXTENSIONS_DIR" "$PYTORCH_KERNEL_CACHE_PATH"
+
+## Pre-build the dilate_points_cuda extension once, serially, before fanning
+## out across GPUs. Otherwise the four background workers all race to JIT
+## compile into the same directory and one of them wins while the others see
+## a half-written .so and crash with the import error we hit previously.
+echo "Pre-building dilate_points_cuda extension..."
+pixi run -e boltz python -c "from sampleworks.core.forward_models.xray.real_space_density_deps.ops.csrc import dilate_points_cuda; print('dilate_points_cuda ready')"
 
 ## Ensure the Boltz2 mols/ directory exists next to the checkpoint.
 ## The Boltz wrapper derives its cache dir from Path(checkpoint).parent and
