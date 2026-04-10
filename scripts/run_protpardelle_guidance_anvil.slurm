@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -A bio260134-ai
-#SBATCH --job-name=baseline_protpardelle_guidance_%m%d%Y
+#SBATCH --job-name=baseline_protpardelle_guidance_04092026
 #SBATCH -p ai
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
@@ -8,8 +8,8 @@
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
 #SBATCH --time=00:10:00
-#SBATCH -o logs/baseline_protpardelle_guidance_%m%d%Y_%j.out
-#SBATCH -e logs/baseline_protpardelle_guidance_%m%d%Y_%j.err
+#SBATCH -o logs/baseline_protpardelle_guidance_04092026_%j.out
+#SBATCH -e logs/baseline_protpardelle_guidance_04092026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=ALL
 
@@ -24,7 +24,7 @@ module load modtree/gpu
 module list
 
 ## Configuration
-SAMPLEWORKS_DIR="$HOME/sampleworks"
+SAMPLEWORKS_DIR="/anvil/projects/x-bio260134/jmo/sampleworks"
 PROTPARDELLE_CONFIG="/anvil/scratch/x-jmo/protpardelle_runs/cc89_anvil_16139230/cc89_anvil/config.yaml"
 PROTPARDELLE_CHECKPOINT="/anvil/scratch/x-jmo/protpardelle_runs/cc89_anvil_16139230/cc89_anvil/checkpoints/epoch44_training_state.pth"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
