@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -A bio260134-ai
-#SBATCH --job-name=boltz2_guidance_04092026
+#SBATCH --job-name=boltz2_guidance_04102026
 #SBATCH -p ai
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
@@ -8,8 +8,8 @@
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
 #SBATCH --time=00:10:00
-#SBATCH -o logs/boltz2_guidance_04092026_%j.out
-#SBATCH -e logs/boltz2_guidance_04092026_%j.err
+#SBATCH -o logs/boltz2_guidance_04102026_%j.out
+#SBATCH -e logs/boltz2_guidance_04102026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=ALL
 
@@ -47,9 +47,13 @@ OUTPUT_DIR="${SAMPLEWORKS_DIR}/output/boltz2_pure_guidance"
 GUIDANCE_START=130
 ENSEMBLE_SIZE=4
 
+## Build CUDA extension
+CSRC_DIR="${SAMPLEWORKS_DIR}/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc"
+cd "$CSRC_DIR"
+pixi run --manifest-path "${SAMPLEWORKS_DIR}/pixi.toml" -e boltz python setup.py build_ext --inplace
+
 ## Run job
 cd "$SAMPLEWORKS_DIR"
-
 pixi run -e boltz python scripts/boltz2_pure_guidance.py \
     --model-checkpoint "$CHECKPOINT" \
     --structure "$STRUCTURE" \
