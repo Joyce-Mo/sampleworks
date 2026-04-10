@@ -21,6 +21,7 @@ nvidia-smi
 ## Load modules
 module purge
 module load modtree/gpu
+module load cuda/12.8.0
 module list
 
 # from sampelworks example: 
@@ -50,7 +51,6 @@ ENSEMBLE_SIZE=4
 ## Build CUDA extension
 CSRC_DIR="${SAMPLEWORKS_DIR}/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc"
 cd "$CSRC_DIR"
-pixi run --manifest-path "${SAMPLEWORKS_DIR}/pixi.toml" -e boltz python setup.py build_ext --inplace
 
 ## Run job
 cd "$SAMPLEWORKS_DIR"

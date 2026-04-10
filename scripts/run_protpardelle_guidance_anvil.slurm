@@ -21,6 +21,7 @@ nvidia-smi
 ## Load modules
 module purge
 module load modtree/gpu
+module load cuda/12.8.0
 module list
 
 ## Configuration
