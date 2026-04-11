@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -A bio260134-ai
-#SBATCH --job-name=baseline_protpardelle_guidance_04092026
+#SBATCH --job-name=baseline_protpardelle_guidance_04112026
 #SBATCH -p ai
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
@@ -8,8 +8,8 @@
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
 #SBATCH --time=00:10:00
-#SBATCH -o logs/baseline_protpardelle_guidance_04092026_%j.out
-#SBATCH -e logs/baseline_protpardelle_guidance_04092026_%j.err
+#SBATCH -o logs/baseline_protpardelle_guidance_04112026_%j.out
+#SBATCH -e logs/baseline_protpardelle_guidance_04112026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=ALL
 
@@ -23,6 +23,10 @@ module purge
 module load modtree/gpu
 module load cuda/12.8.0
 module list
+
+## Ensure pixi is in PATH (module purge may clear it)
+export PATH="$HOME/.pixi/bin:$PATH"
+echo "Using pixi: $(which pixi) ($(pixi --version))"
 
 ## Configuration
 SAMPLEWORKS_DIR="/anvil/projects/x-bio260134/jmo/sampleworks"

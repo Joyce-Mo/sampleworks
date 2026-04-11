@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -A bio260134-ai
-#SBATCH --job-name=boltz2_guidance_04102026
+#SBATCH --job-name=boltz2_guidance_04112026
 #SBATCH -p ai
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
@@ -8,8 +8,8 @@
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
 #SBATCH --time=00:10:00
-#SBATCH -o logs/boltz2_guidance_04102026_%j.out
-#SBATCH -e logs/boltz2_guidance_04102026_%j.err
+#SBATCH -o logs/boltz2_guidance_04112026_%j.out
+#SBATCH -e logs/boltz2_guidance_04112026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=ALL
 
@@ -24,33 +24,19 @@ module load modtree/gpu
 module load cuda/12.8.0
 module list
 
-# from sampelworks example: 
-# pixi run -e boltz python scripts/boltz2_pure_guidance.py \
-#     --model-checkpoint ~/.boltz/boltz2_conf.ckpt \
-#     --structure tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif \
-#     --density tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4 \
-#     --resolution 1.8 \
-#     --output-dir output/boltz2_pure_guidance \
-#     --guidance-start 130 \
-#     --ensemble-size 4 \
-#     --augmentation \
-#     --align-to-input
-
-
+## Ensure is in PATH 
+export PATH="$HOME/.pixi/bin:$PATH"
+echo "Using pixi: $(which pixi) ($(pixi --version))"
 
 ## Configuration
 SAMPLEWORKS_DIR="/anvil/projects/x-bio260134/jmo/sampleworks"
-CHECKPOINT="~/.boltz/boltz2_conf.ckpt"
+CHECKPOINT="$HOME/.boltz/boltz2_conf.ckpt"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
 DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 RESOLUTION=1.8
 OUTPUT_DIR="${SAMPLEWORKS_DIR}/output/boltz2_pure_guidance"
 GUIDANCE_START=130
 ENSEMBLE_SIZE=4
-
-## Build CUDA extension
-CSRC_DIR="${SAMPLEWORKS_DIR}/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc"
-cd "$CSRC_DIR"
 
 ## Run job
 cd "$SAMPLEWORKS_DIR"
