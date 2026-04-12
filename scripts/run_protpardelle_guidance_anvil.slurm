@@ -24,9 +24,13 @@ module load modtree/gpu
 module load cuda/12.8.0
 module list
 
-## Ensure pixi is in PATH (module purge may clear it)
+## Ensure pixi is in PATH 
 export PATH="$HOME/.pixi/bin:$PATH"
 echo "Using pixi: $(which pixi) ($(pixi --version))"
+
+## Environment variables
+PROTPARDELLE_DIR="/anvil/projects/x-bio260134/jmo/protpardelle-1c"
+export PYTHONPATH="${PROTPARDELLE_DIR}/src:${PYTHONPATH:-}"
 
 ## Configuration
 SAMPLEWORKS_DIR="/anvil/projects/x-bio260134/jmo/sampleworks"
