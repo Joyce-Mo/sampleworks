@@ -1,0 +1,23 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) xalt/2.10.45
+
+Inactive Modules:
+  1) xalt
+
+
+Currently Loaded Modules:
+  1) gmp/6.2.1    4) zlib/1.2.11      7) openmpi/4.0.6
+  2) mpfr/3.1.6   5) gcc/8.4.1        8) cuda/11.2.2
+  3) mpc/1.1.0    6) numactl/2.0.14   9) modtree/gpu
+
+Inactive Modules:
+  1) xalt
+
+ 
+
+Error:   × unable to canonicalize '/anvil/projects/x-bio260134/jmo/sampleworks/
+  │ pixi.toml'
+  ╰─▶ No such file or directory (os error 2)
+

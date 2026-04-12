@@ -1,0 +1,50 @@
+Fri Apr 10 20:29:00 EDT 2026
+h008.anvil.rcac.purdue.edu
+Fri Apr 10 20:29:01 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:4C:00.0 Off |                    0 |
+| N/A   22C    P0             68W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H100 80GB HBM3          On  |   00000000:5D:00.0 Off |                    0 |
+| N/A   22C    P0             67W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H100 80GB HBM3          On  |   00000000:CC:00.0 Off |                    0 |
+| N/A   22C    P0             68W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H100 80GB HBM3          On  |   00000000:DC:00.0 Off |                    0 |
+| N/A   23C    P0             68W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+GPU usage:
+  memory.used memory.free
+0       4 MiB   81076 MiB
+1       4 MiB   81076 MiB
+2       4 MiB   81076 MiB
+3       4 MiB   81076 MiB
+Returning GPU0 with 81076 free MiB
+Checking input data.
+All inputs are already processed.
+Processing 0 inputs with 0 threads.
+Job 16221070 complete.
+JobID           Elapsed     MaxRSS  MaxVMSize      State 
+------------ ---------- ---------- ---------- ---------- 
+16221070       00:03:42                          RUNNING 
+16221070.ba+   00:03:42                          RUNNING 
+16221070.ex+   00:03:42                          RUNNING 

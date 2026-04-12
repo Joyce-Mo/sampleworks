@@ -1,0 +1,35 @@
+
+The following have been reloaded with a version change:
+  1) cuda/11.2.2 => cuda/12.8.0
+
+
+Currently Loaded Modules:
+  1) gmp/6.2.1    4) zlib/1.2.11      7) openmpi/4.0.6
+  2) mpfr/3.1.6   5) gcc/8.4.1        8) modtree/gpu
+  3) mpc/1.1.0    6) numactl/2.0.14   9) cuda/12.8.0
+
+ 
+
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Using /home/x-jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/x-jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/build.ninja...
+/anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/default/lib/python3.12/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Building extension module dilate_points_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module dilate_points_cuda...
+Traceback (most recent call last):
+  File "/anvil/projects/x-bio260134/jmo/sampleworks/scripts/protpardelle_pure_guidance.py", line 48, in <module>
+    from sampleworks.models.protpardelle.wrapper import (
+  File "/anvil/projects/x-bio260134/jmo/sampleworks/src/sampleworks/models/protpardelle/wrapper.py", line 27, in <module>
+    from protpardelle.common import residue_constants
+ModuleNotFoundError: No module named 'protpardelle'

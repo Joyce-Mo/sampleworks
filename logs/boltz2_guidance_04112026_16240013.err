@@ -1,0 +1,90 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) xalt/2.10.45
+
+Inactive Modules:
+  1) xalt
+
+
+The following have been reloaded with a version change:
+  1) cuda/11.2.2 => cuda/12.8.0
+
+
+Currently Loaded Modules:
+  1) gmp/6.2.1    4) zlib/1.2.11      7) openmpi/4.0.6
+  2) mpfr/3.1.6   5) gcc/8.4.1        8) modtree/gpu
+  3) mpc/1.1.0    6) numactl/2.0.14   9) cuda/12.8.0
+
+Inactive Modules:
+  1) xalt
+
+ 
+
+Environment variable CCD_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Environment variable PDB_MIRROR_PATH not set. Will not be able to use function requiring this variable. To set it you may:
+  (1) add the line 'export VAR_NAME=path/to/variable' to your .bashrc or .zshrc file
+  (2) set it in your current shell with 'export VAR_NAME=path/to/variable'
+  (3) write it to a .env file in the root of the atomworks.io repository
+Using /home/x-jmo/.cache/torch_extensions/py312_cu126 as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home/x-jmo/.cache/torch_extensions/py312_cu126/dilate_points_cuda/build.ninja...
+/anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/utils/cpp_extension.py:2356: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+Building extension module dilate_points_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module dilate_points_cuda...
+2026-04-11 21:27:57.967 | ERROR    | sampleworks.utils.msa:<module>:16 - Protenix is not installed, cannot use Protenix MSA tools.
+2026-04-11 21:27:57.995 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:58 - Failed to import Protenix, hopefully you're running a different model
+2026-04-11 21:27:57.996 | WARNING  | sampleworks.utils.guidance_script_utils:<module>:63 - Failed to import RF3, hopefully you're running a different model
+2026-04-11 21:27:58.249 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:172 - Using device: cuda:0
+2026-04-11 21:27:58.249 | DEBUG    | sampleworks.utils.guidance_script_utils:get_model_and_device:196 - Loading Boltz2 model from /home/x-jmo/.boltz/boltz2_conf.ckpt
+/anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+2026-04-11 21:28:22.521 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:231 - Loading structure from /anvil/projects/x-bio260134/jmo/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif
+Corrected C=O double bond to single bond between atom 43 (C) and 44 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: MSE, res_id: 13, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 607 (C) and 608 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: ASP, res_id: 79, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 1380 (C) and 1382 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: LEU, res_id: 176, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 1728 (C) and 1730 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: ASN, res_id: 219, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 1821 (C) and 1822 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: SER, res_id: 230, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2604 (C) and 2605 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: SER, res_id: 328, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2616 (C) and 2617 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: THR, res_id: 329, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2630 (C) and 2631 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: TYR, res_id: 330, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2654 (C) and 2655 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: GLU, res_id: 331, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2672 (C) and 2673 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: ALA, res_id: 332, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2682 (C) and 2683 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: GLU, res_id: 333, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2700 (C) and 2701 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: ILE, res_id: 334, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2716 (C) and 2717 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: HIS, res_id: 335, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2738 (C) and 2739 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: PRO, res_id: 336, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 2757 (C) and 2758 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: MSE, res_id: 338, atom_name of invalid carbon: C, atom_name of oxygen: O
+Corrected C=O double bond to single bond between atom 3001 (C) and 3002 (O) due to nucleophilic addition (degree > 4). chain_id: A, res_name: GLU, res_id: 368, atom_name of invalid carbon: C, atom_name of oxygen: O
+We can't fix formal charges without building from templates, as we need to know the true number of hydrogens bonded to a given atom, not the inferred number. This may lead to occasional inaccuracies after adding inter-residue bonds. To avoid this and fix formal charges, set `add_missing_atoms = True`.
+Field charge not found in file, ignoring.
+2026-04-11 21:28:24.056 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:243 - Loading density map from /anvil/projects/x-bio260134/jmo/sampleworks/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4
+2026-04-11 21:28:24.220 | DEBUG    | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:246 - Setting up scattering parameters
+2026-04-11 21:28:24.342 | WARNING  | sampleworks.core.rewards.real_space_density:setup_scattering_params:55 - Element '?' (scattering index 0) has no tabulated scattering factors and will contribute zero density. This indicates the scattering factor table is incomplete for this element.
+2026-04-11 21:28:24.369 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:253 - Selected 3239 atoms with occupancy > 0
+2026-04-11 21:28:24.369 | INFO     | sampleworks.utils.guidance_script_utils:get_reward_function_and_structure:255 - Creating reward function
+/anvil/projects/x-bio260134/jmo/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density.py:137: UserWarning: resolution does not have low limit set, using 1000 Å as low
+  warnings.warn("resolution does not have low limit set, using 1000 Å as low")
+2026-04-11 21:28:24.416 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:485 - Initializing pure guidance
+2026-04-11 21:28:24.417 | INFO     | sampleworks.core.scalers.pure_guidance:__init__:40 - Initialized Pure Guidance scaler.
+2026-04-11 21:28:24.417 | INFO     | sampleworks.utils.guidance_script_utils:_run_guidance:498 - Running pure guidance using model with hash 1420130220298
+2026-04-11 21:28:24.436 | DEBUG    | sampleworks.utils.msa:_validate_msa_cache_contents:99 - Validated 6355 sequences for hash 8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e, index 0
+2026-04-11 21:28:24.437 | DEBUG    | sampleworks.models.boltz.wrapper:create_boltz_input_from_structure:456 - Should use msa_paths {'A': PosixPath('/home/x-jmo/.sampleworks/msa/8afdf7a1171c2d202bc8ed0b9e8d23dcc986b91e9946f1ff5416d1dd2bf93e3e_0.csv')}
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+/anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=1827255) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  self.pid = os.fork()
+2026-04-11 21:28:33.191 | INFO     | sampleworks.eval.structure_utils:process_structure_to_trajectory_input:193 - Atom count mismatch: model=3239, structure=3239, common=3232
+  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 1/200 [00:01<04:14,  1.28s/it]  2%|▏         | 4/200 [00:01<00:55,  3.54it/s]  4%|▎         | 7/200 [00:01<00:30,  6.35it/s]  5%|▌         | 10/200 [00:01<00:21,  9.03it/s]  6%|▋         | 13/200 [00:01<00:16, 11.44it/s]  8%|▊         | 16/200 [00:02<00:13, 13.49it/s] 10%|▉         | 19/200 [00:02<00:11, 15.16it/s] 11%|█         | 22/200 [00:02<00:10, 16.47it/s] 12%|█▎        | 25/200 [00:02<00:10, 17.46it/s] 14%|█▍        | 28/200 [00:02<00:09, 18.21it/s] 16%|█▌        | 31/200 [00:02<00:09, 18.75it/s] 17%|█▋        | 34/200 [00:02<00:08, 19.15it/s] 18%|█▊        | 37/200 [00:03<00:08, 19.42it/s] 20%|██        | 40/200 [00:03<00:08, 19.62it/s] 22%|██▏       | 43/200 [00:03<00:07, 19.76it/s] 23%|██▎       | 46/200 [00:03<00:07, 19.86it/s] 24%|██▍       | 49/200 [00:03<00:07, 19.93it/s] 26%|██▌       | 52/200 [00:03<00:07, 19.97it/s] 28%|██▊       | 55/200 [00:03<00:07, 20.01it/s] 29%|██▉       | 58/200 [00:04<00:07, 20.04it/s] 30%|███       | 61/200 [00:04<00:06, 20.05it/s] 32%|███▏      | 64/200 [00:04<00:06, 20.06it/s] 34%|███▎      | 67/200 [00:04<00:06, 20.05it/s] 35%|███▌      | 70/200 [00:04<00:06, 20.07it/s] 36%|███▋      | 73/200 [00:04<00:06, 20.04it/s] 38%|███▊      | 76/200 [00:05<00:06, 20.05it/s] 40%|███▉      | 79/200 [00:05<00:06, 20.06it/s] 41%|████      | 82/200 [00:05<00:05, 20.07it/s] 42%|████▎     | 85/200 [00:05<00:05, 20.07it/s] 44%|████▍     | 88/200 [00:05<00:05, 20.07it/s] 46%|████▌     | 91/200 [00:05<00:05, 20.07it/s] 47%|████▋     | 94/200 [00:05<00:05, 20.08it/s] 48%|████▊     | 97/200 [00:06<00:05, 20.09it/s] 50%|█████     | 100/200 [00:06<00:04, 20.08it/s] 52%|█████▏    | 103/200 [00:06<00:04, 20.08it/s] 53%|█████▎    | 106/200 [00:06<00:04, 20.08it/s] 55%|█████▍    | 109/200 [00:06<00:04, 20.08it/s] 56%|█████▌    | 112/200 [00:06<00:04, 20.09it/s] 57%|█████▊    | 115/200 [00:06<00:04, 20.08it/s] 59%|█████▉    | 118/200 [00:07<00:04, 20.08it/s] 60%|██████    | 121/200 [00:07<00:03, 20.07it/s] 62%|██████▏   | 124/200 [00:07<00:03, 20.07it/s] 64%|██████▎   | 127/200 [00:07<00:03, 20.07it/s] 65%|██████▌   | 130/200 [00:07<00:03, 20.07it/s] 66%|██████▋   | 133/200 [00:08<00:07,  9.49it/s] 68%|██████▊   | 135/200 [00:08<00:06,  9.75it/s] 68%|██████▊   | 137/200 [00:08<00:06,  9.98it/s] 70%|██████▉   | 139/200 [00:08<00:06, 10.16it/s] 70%|███████   | 141/200 [00:09<00:05, 10.30it/s] 72%|███████▏  | 143/200 [00:09<00:05, 10.40it/s] 72%|███████▎  | 145/200 [00:09<00:05, 10.48it/s] 74%|███████▎  | 147/200 [00:09<00:05, 10.54it/s] 74%|███████▍  | 149/200 [00:09<00:04, 10.58it/s] 76%|███████▌  | 151/200 [00:10<00:04, 10.62it/s] 76%|███████▋  | 153/200 [00:10<00:04, 10.64it/s] 78%|███████▊  | 155/200 [00:10<00:04, 10.66it/s] 78%|███████▊  | 157/200 [00:10<00:04, 10.67it/s] 80%|███████▉  | 159/200 [00:10<00:03, 10.68it/s] 80%|████████  | 161/200 [00:11<00:03, 10.69it/s] 82%|████████▏ | 163/200 [00:11<00:03, 10.69it/s] 82%|████████▎ | 165/200 [00:11<00:03, 10.70it/s] 84%|████████▎ | 167/200 [00:11<00:03, 10.70it/s] 84%|████████▍ | 169/200 [00:11<00:02, 10.70it/s] 86%|████████▌ | 171/200 [00:11<00:02, 10.70it/s] 86%|████████▋ | 173/200 [00:12<00:02, 10.70it/s] 88%|████████▊ | 175/200 [00:12<00:02, 10.70it/s] 88%|████████▊ | 177/200 [00:12<00:02, 10.70it/s] 90%|████████▉ | 179/200 [00:12<00:01, 10.70it/s] 90%|█████████ | 181/200 [00:12<00:01, 10.70it/s] 92%|█████████▏| 183/200 [00:13<00:01, 10.70it/s] 92%|█████████▎| 185/200 [00:13<00:01, 10.70it/s] 94%|█████████▎| 187/200 [00:13<00:01, 10.70it/s] 94%|█████████▍| 189/200 [00:13<00:01, 10.70it/s] 96%|█████████▌| 191/200 [00:13<00:00, 10.70it/s] 96%|█████████▋| 193/200 [00:14<00:00, 10.70it/s] 98%|█████████▊| 195/200 [00:14<00:00, 10.69it/s] 98%|█████████▊| 197/200 [00:14<00:00, 10.69it/s]100%|█████████▉| 199/200 [00:14<00:00, 10.69it/s]100%|██████████| 200/200 [00:14<00:00, 13.64it/s]
+2026-04-11 21:28:48.598 | INFO     | sampleworks.utils.guidance_script_utils:save_everything:310 - Saving results
+2026-04-11 21:28:54.922 | INFO     | sampleworks.utils.guidance_script_utils:save_everything:355 - 
+Final loss: 0.027852
+2026-04-11 21:28:54.922 | INFO     | sampleworks.utils.guidance_script_utils:save_everything:356 - Initial loss: 0.028821
+2026-04-11 21:28:54.922 | INFO     | sampleworks.utils.guidance_script_utils:save_everything:357 - Loss reduction: 0.000968
+2026-04-11 21:28:54.922 | INFO     | sampleworks.utils.guidance_script_utils:save_everything:359 - 
+Results saved to /anvil/projects/x-bio260134/jmo/sampleworks/output/boltz2_pure_guidance/
+2026-04-11 21:28:54.979 | INFO     | sampleworks.utils.guidance_script_utils:run_guidance:402 - Guidance run successfully!

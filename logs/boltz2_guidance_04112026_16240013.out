@@ -1,0 +1,63 @@
+Sat Apr 11 21:23:44 EDT 2026
+h011.anvil.rcac.purdue.edu
+Sat Apr 11 21:23:44 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:4C:00.0 Off |                    0 |
+| N/A   26C    P0             69W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H100 80GB HBM3          On  |   00000000:5D:00.0 Off |                    0 |
+| N/A   25C    P0             69W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA H100 80GB HBM3          On  |   00000000:CC:00.0 Off |                    0 |
+| N/A   25C    P0             70W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA H100 80GB HBM3          On  |   00000000:DC:00.0 Off |                    0 |
+| N/A   25C    P0             70W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Using pixi: /home/x-jmo/.pixi/bin/pixi (pixi 0.67.0)
+[1/4] /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/bin/x86_64-conda-linux-gnu-c++ -MMD -MF dilate_points_ext.o.d -DTORCH_EXTENSION_NAME=dilate_points_cuda -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1016\" -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/include/python3.12 -D_GLIBCXX_USE_CXX11_ABI=1 -fPIC -std=c++17 -c /anvil/projects/x-bio260134/jmo/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/dilate_points_ext.cpp -o dilate_points_ext.o 
+[2/4] /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/bin/nvcc --generate-dependencies-with-compile --dependency-output dilate_points_kernel.cuda.o.d -ccbin /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/bin/x86_64-conda-linux-gnu-cc -DTORCH_EXTENSION_NAME=dilate_points_cuda -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1016\" -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/include/python3.12 -D_GLIBCXX_USE_CXX11_ABI=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_90,code=compute_90 -gencode=arch=compute_90,code=sm_90 --compiler-options '-fPIC' -std=c++17 -c /anvil/projects/x-bio260134/jmo/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/cuda/dilate_points_kernel.cu -o dilate_points_kernel.cuda.o 
+nvcc warning : incompatible redefinition for option 'compiler-bindir', the last value of this option was used
+/anvil/projects/x-bio260134/jmo/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/cuda/dilate_points_kernel.cu(6): warning #177-D: variable "THREADS_PER_BLOCK" was declared but never referenced
+  const int THREADS_PER_BLOCK = 256;
+            ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+[3/4] /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/bin/nvcc --generate-dependencies-with-compile --dependency-output dilate_points_impl.cuda.o.d -ccbin /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/bin/x86_64-conda-linux-gnu-cc -DTORCH_EXTENSION_NAME=dilate_points_cuda -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1016\" -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/include -isystem /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/include/python3.12 -D_GLIBCXX_USE_CXX11_ABI=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_90,code=compute_90 -gencode=arch=compute_90,code=sm_90 --compiler-options '-fPIC' -std=c++17 -c /anvil/projects/x-bio260134/jmo/sampleworks/src/sampleworks/core/forward_models/xray/real_space_density_deps/ops/csrc/cuda/dilate_points_impl.cu -o dilate_points_impl.cuda.o 
+nvcc warning : incompatible redefinition for option 'compiler-bindir', the last value of this option was used
+[4/4] /anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/bin/x86_64-conda-linux-gnu-c++ dilate_points_ext.o dilate_points_impl.cuda.o dilate_points_kernel.cuda.o -shared -L/anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib/python3.12/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/anvil/projects/x-bio260134/jmo/sampleworks/.pixi/envs/boltz/lib -lcudart -o dilate_points_cuda.so
+GPU usage:
+  memory.used memory.free
+0       4 MiB   81076 MiB
+1       4 MiB   81076 MiB
+2       4 MiB   81076 MiB
+3       4 MiB   81076 MiB
+Returning GPU0 with 81076 free MiB
+Checking input data.
+All inputs are already processed.
+Processing 0 inputs with 0 threads.
+Job 16240013 complete.
+JobID           Elapsed     MaxRSS  MaxVMSize      State 
+------------ ---------- ---------- ---------- ---------- 
+16240013       00:05:16                          RUNNING 
+16240013.ba+   00:05:16                          RUNNING 
+16240013.ex+   00:05:16                          RUNNING 
