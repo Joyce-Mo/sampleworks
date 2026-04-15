@@ -31,11 +31,14 @@ dependencies = [
   "loguru",
   "omegaconf",
   # Required by protpardelle (added via PYTHONPATH, not a pixi feature).
-  # dm-tree: protpardelle.common.residue_constants
-  # einops: protpardelle.core.models, protpardelle.core.modules
+  # Full import chain from sampleworks.models.protpardelle.wrapper:
+  #   dm-tree:    protpardelle.common.residue_constants (line 27)
+  #   einops:     protpardelle.core.models, modules, integrations.protein_mpnn, data.pdb_io
+  #   biopython:  protpardelle.data.pdb_io (from Bio.PDB import MMCIFParser, PDBParser)
   # See: https://github.com/ProteinDesignLab/protpardelle
   "dm-tree",
   "einops",
+  "biopython",
 ]
 name = "sampleworks"
 requires-python = ">= 3.11, <3.14"
