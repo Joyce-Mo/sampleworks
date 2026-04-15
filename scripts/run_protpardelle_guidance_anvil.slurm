@@ -8,8 +8,8 @@
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
 #SBATCH --time=00:10:00
-#SBATCH -o logs/baseline_protpardelle_guidance_04112026_%j.out
-#SBATCH -e logs/baseline_protpardelle_guidance_04112026_%j.err
+#SBATCH -o logs/baseline_protpardelle_guidance_04142026_%j.out
+#SBATCH -e logs/baseline_protpardelle_guidance_04142026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=ALL
 
@@ -32,6 +32,11 @@ echo "Using pixi: $(which pixi) ($(pixi --version))"
 PROTPARDELLE_DIR="/anvil/projects/x-bio260134/jmo/protpardelle-1c"
 export PYTHONPATH="${PROTPARDELLE_DIR}/src:${PYTHONPATH:-}"
 
+## Install protpardelle's missing deps into the pixi env
+## dm-tree: needed by protpardelle.common.residue_constants
+## einops: needed by protpardelle.core.models and protpardelle.core.modules
+pixi run pip install dm-tree einops 2>/dev/null || true
+
 ## Configuration
 SAMPLEWORKS_DIR="/anvil/projects/x-bio260134/jmo/sampleworks"
 PROTPARDELLE_CONFIG="/anvil/scratch/x-jmo/protpardelle_runs/cc89_anvil_16139230/cc89_anvil/config.yaml"
@@ -40,7 +45,7 @@ STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5o
 DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 RESOLUTION=1.8
 ENSEMBLE_SIZE=4
-GUIDANCE_START=130
+GUIDANCE_START=100 # 130 to keep this consistent with boltz example, but switch to 100 / 200 for t = 0.5
 
 ## Run job
 cd "$SAMPLEWORKS_DIR"

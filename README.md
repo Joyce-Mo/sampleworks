@@ -183,3 +183,179 @@ This project uses [Conventional Commits](https://www.conventionalcommits.org/) t
 ```
 
 Common types: `feat`, `fix`, `docs`, `refactor`, `chore`, `test`, `perf`. A commitizen pre-commit hook validates messages at commit time. See [AGENTS.md](AGENTS.md#release-process) for full details.
+
+# Addition for this fork: Protpardelle wrapper
+
+Architecture Overview
+
+  The pipeline has 5 layers, each with a clear role:
+
+  SLURM script  →  protpardelle_pure_guidance.py  →  PureGuidance
+  (orchestrator)
+                                                         ↓
+                                                AF3EDMSampler (noise schedule +
+   Euler steps)
+                                                         ↓
+                                                ProtpardelleWrapper (model
+  interface)
+
+  ---
+  1. ProtpardelleWrapper (wrapper.py)
+
+  What it does: Translates between sampleworks' flat atom representation [B,
+  n_atoms, 3] and protpardelle's internal [B, L, 37, 3] (residue x atom37)
+  representation.
+
+  Libraries: torch (tensors/scatter/gather), biotite (structural biology
+  AtomArrays), numpy, jaxtyping (shape annotations)
+
+  Key methods:
+
+  __init__(config_path, checkpoint_path, device)
+  - Loads the protpardelle model via protpardelle.core.models.load_model
+  - Stores sigma_data (the model's assumed data standard deviation)
+  - Initializes mutable self-conditioning state (_struct_self_cond,
+  _seq_self_cond)
+
+  featurize(structure) → GenerativeModelInput[ProtpardelleConditioning]
+  - Takes an atomworks structure dict, extracts the asymmetric unit as a
+  Biotite AtomArray
+  - Calls _atomarray_to_atom37() — groups atoms by (chain_id, res_id) and
+  places each into its canonical atom37 slot using residue_constants.atom_order
+  - Builds the canonical atom mask: for backbone-only models, only N/CA/C/O
+  slots; otherwise uses atom37_mask_from_aatype to get all atom slots per
+  residue type
+  - Computes real_atom_indices — the flat indices within [L*37] where real
+  atoms live. This is the key mapping between the two representations
+  - Returns x_init (reference coords in flat space) and
+  ProtpardelleConditioning
+
+  step(x_t, t, features) → x̂₀
+  - Flat → atom37 (scatter): Uses torch.scatter with real_atom_indices to place
+   flat atom coords into [B, L, 37, 3] — this is differentiable so gradients
+  flow through for guidance
+  - Broadcasts sigma t to per-residue [B, L]
+  - Passes self-conditioning from the previous step (detached to avoid
+  cross-step gradients)
+  - Calls the protpardelle model forward pass → gets denoised coords + updated
+  self-conditioning
+  - Atom37 → flat (gather): Uses torch.gather with same indices to extract real
+   atoms back to [B, n_real, 3]
+
+  initialize_from_prior(batch_size, features) → noise
+  - Returns randn(batch_size, n_real_atoms, 3) — Gaussian noise in flat atom
+  space
+  - Resets self-conditioning state
+
+  ---
+  2. AF3EDMSampler (edm.py)
+
+  What it does: Implements the EDM (Karras et al. 2022) noise schedule and
+  Euler sampling step, following AlphaFold3's Algorithm 18.
+
+  compute_schedule(num_steps=200) → EDMSchedule
+
+  The noise schedule formula:
+
+  σ(t) = σ_data · (s_max^(1/ρ) + t · (s_min^(1/ρ) − s_max^(1/ρ)))^ρ
+
+  where t goes from 0→1 over num_steps. With defaults (σ_data=16, s_max=160,
+  s_min=4e-4, ρ=7):
+  - Step 0 (t=0): σ = 16 × 160 = 2560 (pure noise)
+  - Step 100 (t=0.5): σ ≈ 1.23 (mid-denoise)
+  - Step 199 (t≈1): σ ≈ 0.006 (nearly clean)
+
+  Each step also computes:
+  - gamma — stochastic noise inflation (0.8 when σ > γ_min=0.2, else 0)
+  - t_hat = σ_{t-1} × (1 + γ) — inflated noise level
+  - dt = σ_t − t_hat — step size
+
+  step(state, model_wrapper, context, scaler, features) → SamplerStepOutput
+
+  Each Euler step:
+  1. Center state, optionally apply random SO(3) augmentation
+  2. Add stochastic noise: x_noisy = x + ε, where ε ~ N(0, eps_scale²)
+  3. Call model_wrapper.step(x_noisy, t_hat) → get denoised prediction x̂₀
+  4. Optionally align x̂₀ to reference frame (Kabsch alignment via reconciler)
+  5. Compute denoising direction: δ = (x_noisy − x̂₀) / t_hat
+  6. If scaler provided, compute guidance gradient and add to δ
+  7. Euler update: x_{next} = x_noisy + step_scale × dt × δ
+
+  EDMSamplerConfig parameters:
+
+  ┌─────────────────────────────┬─────────┬─────────────────────────────────┐
+  │          Parameter          │ Default │             Effect              │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ sigma_data                  │ 16.0    │ Data distribution std dev —     │
+  │                             │         │ scales entire noise schedule    │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ s_max                       │ 160.0   │ Max noise ratio — controls      │
+  │                             │         │ starting noise level            │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ s_min                       │ 4e-4    │ Min noise ratio — controls      │
+  │                             │         │ ending noise level              │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ p (ρ)                       │ 7.0     │ Schedule curvature — higher =   │
+  │                             │         │ more steps at low noise         │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ gamma_min                   │ 0.2     │ Below this σ, no stochastic     │
+  │                             │         │ noise inflation                 │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ gamma_0                     │ 0.8     │ Noise inflation factor          │
+  │                             │         │ (S_churn/N in Karras)           │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ noise_scale                 │ 1.003   │ Multiplier on stochastic noise  │
+  │                             │         │ (S_noise in Karras)             │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ step_scale                  │ 1.5     │ Euler step multiplier (AF3 uses │
+  │                             │         │  1.5)                           │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ augmentation                │ True    │ Random SO(3) rotation each step │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │ align_to_input              │ True    │ Kabsch-align x̂₀ back to         │
+  │                             │         │ reference                       │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │                             │         │ Align noisy state to x̂₀         │
+  │ alignment_reverse_diffusion │ False   │ (Boltz-1 specific, off for      │
+  │                             │         │ protpardelle)                   │
+  ├─────────────────────────────┼─────────┼─────────────────────────────────┤
+  │                             │         │ Rescale guidance gradient to    │
+  │ scale_guidance_to_diffusion │ True    │ match diffusion update          │  
+  │                             │         │ magnitude                       │
+  └─────────────────────────────┴─────────┴─────────────────────────────────┘  
+                  
+  ---                                            
+  3. PureGuidance (pure_guidance.py)
+                                    
+  What it does: Orchestrates the full sampling loop — featurize → init from
+  prior → loop over steps with optional guidance.                              
+  
+  Parameters:                                                                  
+  - ensemble_size — batch of parallel samples
+  - num_steps — total diffusion steps (hardcoded 200 in the script)            
+  - t_start — if > 0, starts from partial diffusion (noisy version of input
+  rather than pure noise)                                                      
+  - guidance_t_start — fraction [0,1] of steps after which guidance kicks in   
+                                                                               
+  The loop (line 108): for i in range(starting_step, num_steps):               
+  - Gets step context from sampler schedule                                    
+  - If i >= guidance_start, attaches reward function to context                
+  - Calls sampler.step() with or without scaler                                
+                                                                               
+  ---                                            
+  4. Step Scalers (step_scalers.py)                                            
+                                                                               
+  Two DPS (Diffusion Posterior Sampling) variants:
+                                                                               
+  DataSpaceDPSScaler (default when --use-tweedie is set):                      
+  - Computes gradient of reward w.r.t. the denoised prediction x̂₀ only         
+  - Fast — doesn't backprop through the model                                  
+  - guidance_strength = step_size (constant)     
+                                                                               
+  NoiseSpaceDPSScaler (default in the script):                                 
+  - Computes gradient of reward w.r.t. the noisy input x_t, backpropping       
+  through the full model                                                       
+  - More accurate but slower and more memory-intensive                         
+  - Requires requires_grad=True on the noisy state                             
+                                                  
+  Both support --gradient-normalization (divides gradient by its L2 norm).
