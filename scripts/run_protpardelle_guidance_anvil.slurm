@@ -28,14 +28,11 @@ module list
 export PATH="$HOME/.pixi/bin:$PATH"
 echo "Using pixi: $(which pixi) ($(pixi --version))"
 
-## Environment variables
+## Protpardelle source is added via PYTHONPATH (not a pixi feature).
+## Its deps (dm-tree, einops) are declared in pyproject.toml so pixi resolves them.
+## See: https://github.com/ProteinDesignLab/protpardelle
 PROTPARDELLE_DIR="/anvil/projects/x-bio260134/jmo/protpardelle-1c"
 export PYTHONPATH="${PROTPARDELLE_DIR}/src:${PYTHONPATH:-}"
-
-## Install protpardelle's missing deps into the pixi env
-## dm-tree: needed by protpardelle.common.residue_constants
-## einops: needed by protpardelle.core.models and protpardelle.core.modules
-pixi run pip install dm-tree einops 2>/dev/null || true
 
 ## Configuration
 SAMPLEWORKS_DIR="/anvil/projects/x-bio260134/jmo/sampleworks"
@@ -45,7 +42,7 @@ STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5o
 DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 RESOLUTION=1.8
 ENSEMBLE_SIZE=4
-GUIDANCE_START=100 # 130 to keep this consistent with boltz example, but switch to 100 / 200 for t = 0.5
+GUIDANCE_START=100 # 130 to keep this consistent with boltz example, switched to 100 / 200 for t = 0.5
 
 ## Run job
 cd "$SAMPLEWORKS_DIR"

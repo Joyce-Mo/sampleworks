@@ -29,7 +29,13 @@ dependencies = [
   "einx<0.4",
   "hydra-core",
   "loguru",
-  "omegaconf"
+  "omegaconf",
+  # Required by protpardelle (added via PYTHONPATH, not a pixi feature).
+  # dm-tree: protpardelle.common.residue_constants
+  # einops: protpardelle.core.models, protpardelle.core.modules
+  # See: https://github.com/ProteinDesignLab/protpardelle
+  "dm-tree",
+  "einops",
 ]
 name = "sampleworks"
 requires-python = ">= 3.11, <3.14"
