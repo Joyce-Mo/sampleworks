@@ -1,15 +1,15 @@
 #!/bin/bash
 #SBATCH -A bio260134-ai
-#SBATCH --job-name=baseline_protpardelle_guidance_04152026
+#SBATCH --job-name=baseline_protpardelle_guidance_04162026
 #SBATCH -p ai
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=4 
 #SBATCH --cpus-per-task=16
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
 #SBATCH --time=06:00:00
-#SBATCH -o logs/baseline_protpardelle_guidance_04152026_%j.out
-#SBATCH -e logs/baseline_protpardelle_guidance_04152026_%j.err
+#SBATCH -o logs/baseline_protpardelle_guidance_04162026_%j.out
+#SBATCH -e logs/baseline_protpardelle_guidance_04162026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=ALL
 
