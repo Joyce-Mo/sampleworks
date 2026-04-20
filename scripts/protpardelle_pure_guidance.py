@@ -140,15 +140,27 @@ def main(args):
         device=device,
     )
 
-    # Sampler — AF3EDMSampler now takes a single EDMSamplerConfig (refactored
-    # in commit 406edd9). alignment_reverse_diffusion stays False since
-    # Protpardelle (unlike Boltz-1) wasn't trained with it.
-    sampler = AF3EDMSampler(
+    # Stepper config matching protpardelle's native noise schedule (cc89.yaml)
+    # and ppd_helper.py's ODE sampling behavior:
+    #   - sigma_data=10.01, s_max=80.0, s_min=0.001 from cc89.yaml
+    #   - gamma_0=0.0: pure ODE (no stochastic noise injection), ppd_helper
+    #     never adds noise between steps
+    #   - step_scale=1.0: ppd_helper default (AF3 uses 1.5)
+    #   - alignment_reverse_diffusion=True: ppd_helper aligns noisy state onto
+    #     denoised prediction before taking the Euler step, which "quantitatively
+    #     improves RMSD to ground truth for cc89" per ppd_helper.py comments
+    stepper = AF3EDMSampler(
         EDMSamplerConfig(
+            sigma_data=model_wrapper.sigma_data,
+            s_max=80.0,
+            s_min=0.001,
+            gamma_0=0.0,
+            step_scale=1.0,
+            noise_scale=1.0,
             device=str(device),
             augmentation=args.augmentation,
             align_to_input=args.align_to_input,
-            alignment_reverse_diffusion=False,
+            alignment_reverse_diffusion=True,
         )
     )
 
@@ -184,7 +196,7 @@ def main(args):
     result = guidance.sample(
         structure=structure,
         model=model_wrapper,
-        sampler=sampler,
+        sampler=stepper,
         step_scaler=step_scaler,
         reward=reward_function,
     )

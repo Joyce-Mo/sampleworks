@@ -4,11 +4,10 @@ Wrapper for Protpardelle
 Follows the ``FlowModelWrapper`` protocol in ``models/protocol.py``
 for use in sampleworks guidance pipelines.
 
-Protpardelle is an EDM-style diffusion model that operates in residue-atom37
-coordinate space ``[B, L, 37, 3]``. This wrapper translates between the flat
-atom space ``[B, n_atoms, 3]`` expected by sampleworks and protpardelle's
-internal representation, using scatter/gather operations to preserve gradient
-flow for guidance.
+Protpardelle is a diffusion model that operates in residue-atom37
+coordinate space [B, L, 37, 3]. This wrapper translates between the flat
+atom space [B, n_atoms, 3] expected by sampleworks and protpardelle's
+internal representation. The steppers are based on ppd_helper.py from Dru. 
 
 
 """
@@ -332,18 +331,25 @@ class ProtpardelleWrapper:
         aatype_np = feats["aatype"]
         atom_positions_np = feats["atom_positions"]  # [L, 37, 3]
         residue_index_np = feats["residue_index"]
-        chain_index_np = feats["chain_index"]
         n_res = len(aatype_np)
 
         # Build tensors on device
         aatype_t = torch.tensor(aatype_np, device=self.device, dtype=torch.long).unsqueeze(0)
         seq_mask = torch.ones(1, n_res, device=self.device, dtype=torch.float32)
-        residue_index_t = torch.tensor(
-            residue_index_np, device=self.device, dtype=torch.long
-        ).unsqueeze(0)
-        chain_index_t = torch.tensor(
-            chain_index_np, device=self.device, dtype=torch.long
-        ).unsqueeze(0)
+
+        # Use sequential 1-indexed residue indices, matching ppd_helper.py
+        # (torch.arange(1, Nres+1)). Protpardelle's positional encoding was
+        # trained with sequential indices, not raw PDB res_id values which can
+        # start at arbitrary numbers or have gaps.
+        residue_index_t = torch.arange(
+            1, n_res + 1, device=self.device, dtype=torch.long
+        ).unsqueeze(0)  # [1, L]
+
+        # Single chain index (all zeros), matching ppd_helper.py behavior.
+        # Protpardelle was trained on single-chain proteins.
+        chain_index_t = torch.zeros(
+            1, n_res, device=self.device, dtype=torch.long
+        )  # [1, L]
 
         # Canonical atom mask: which atoms the model predicts for each residue type
         # For backbone-only models, restrict to backbone atoms
@@ -390,7 +396,6 @@ class ProtpardelleWrapper:
             x_init = torch.tensor(
                 true_atom_array.coord, device=self.device, dtype=torch.float32
             )
-            x_init = match_batch(x_init.unsqueeze(0), target_batch_size=ensemble_size).clone()
         else:
             # Place input coords into atom37 slots, then extract real atoms
             atom37_coords = torch.tensor(
@@ -398,7 +403,6 @@ class ProtpardelleWrapper:
             )  # [L, 37, 3]
             flat_coords = atom37_coords.reshape(-1, 3)  # [L*37, 3]
             x_init = flat_coords[real_atom_indices]  # [n_real, 3]
-            x_init = match_batch(x_init.unsqueeze(0), target_batch_size=ensemble_size).clone()
 
             if len(true_atom_array) != n_real_atoms:
                 logger.warning(
@@ -406,6 +410,19 @@ class ProtpardelleWrapper:
                     f"but model expects {n_real_atoms}. x_init built from atom37 slot mapping; "
                     "some coordinates may be zero."
                 )
+
+        # Center x_init at the origin. The center of mass is computed from
+        # real atoms only (x_init already excludes ghost atoms since it was
+        # gathered via real_atom_indices). This prevents the structure from
+        # drifting far from origin during sampling, which can cause numerical
+        # issues in the diffusion process.
+        com = x_init.mean(dim=0, keepdim=True)  # [1, 3]
+        x_init = x_init - com
+        logger.info(
+            f"Centered x_init at origin (shifted by {com.squeeze().tolist()})"
+        )
+
+        x_init = match_batch(x_init.unsqueeze(0), target_batch_size=ensemble_size).clone()
 
         return GenerativeModelInput(x_init=x_init, conditioning=conditioning)
 
@@ -467,6 +484,15 @@ class ProtpardelleWrapper:
         )
         noisy_flat = noisy_flat.scatter(1, scatter_idx, x_t)
         noisy_coords = noisy_flat.reshape(batch_size, L, _N_ATOM37, 3)
+
+        # Ghost atoms (positions where atom_mask == 0) must be explicitly zeroed
+        # before the model forward pass. While scatter leaves unoccupied slots at
+        # zero, this guard ensures correctness even if floating-point drift or
+        # upstream changes introduce nonzero values in ghost positions.
+        # Reference: ppd_helper.py lines 282-284 in protpardelle-1c
+        ghost_mask = ~cond.atom_mask.bool()  # [1, L, 37], True where ghost
+        ghost_mask = ghost_mask.expand(batch_size, -1, -1)  # [B, L, 37]
+        noisy_coords[ghost_mask] = 0.0
 
         # Broadcast sigma to per-residue [B, L]
         noise_level = t_tensor.unsqueeze(-1).expand(batch_size, L)
