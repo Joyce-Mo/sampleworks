@@ -545,7 +545,14 @@ class ProtpardelleWrapper:
         *,
         shape: tuple[int, ...] | None = None,
     ) -> Float[Tensor, "batch atoms 3"]:
-        """Sample Gaussian noise in flat atom space.
+        """Sample from the prior N(0, sigma_max^2 * I) in flat atom space.
+
+        The noise is scaled by sigma_max from the model's native noise
+        schedule, matching ppd_helper.py: ``coords *= self.noise_schedule(1.0)``.
+        This is critical for protpardelle's pure ODE sampling (gamma=0) because
+        there is no stochastic noise injection at the first step to rescue an
+        unscaled initialization. Without this scaling, the model's c_in
+        preconditioner (1/sigma) crushes the input to near-zero at every step.
 
         Parameters
         ----------
@@ -559,7 +566,7 @@ class ProtpardelleWrapper:
         Returns
         -------
         Float[Tensor, "batch atoms 3"]
-            Gaussian noise coordinates.
+            Scaled Gaussian noise coordinates.
 
         Raises
         ------
@@ -570,10 +577,17 @@ class ProtpardelleWrapper:
         self._struct_self_cond = None
         self._seq_self_cond = None
 
+        # Scale noise by sigma_max from protpardelle's noise schedule at t=1.0
+        # (t=1 = max noise in protpardelle's convention, opposite of Karras).
+        # Reference: ppd_helper.py line 116-117
+        sigma_max = self.model.sampling_noise_schedule_default(
+            torch.tensor(1.0)
+        ).to(self.device)
+
         if shape is not None:
             if len(shape) != 2 or shape[1] != 3:
                 raise ValueError("shape must be of the form (num_atoms, 3)")
-            return torch.randn((batch_size, *shape), device=self.device)
+            return torch.randn((batch_size, *shape), device=self.device) * sigma_max
 
         if features is None or features.conditioning is None:
             raise ValueError(
@@ -581,4 +595,4 @@ class ProtpardelleWrapper:
             )
 
         n_real = features.conditioning.n_real_atoms
-        return torch.randn((batch_size, n_real, 3), device=self.device)
+        return torch.randn((batch_size, n_real, 3), device=self.device) * sigma_max

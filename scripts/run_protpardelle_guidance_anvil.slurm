@@ -37,7 +37,7 @@ export PYTHONPATH="${PROTPARDELLE_DIR}/src:${PYTHONPATH:-}"
 ## Configuration
 SAMPLEWORKS_DIR="/anvil/projects/x-bio260134/jmo/sampleworks"
 # PROTPARDELLE_CONFIG="/anvil/scratch/x-jmo/protpardelle_runs/cc89_anvil_16139230/cc89_anvil/config.yaml"
-PROTPARDELLE_CONFIG="/anvil/projects/x-bio260134/jmo/protpardelle-1c/examples/training/cc89_anvil.yaml" # basically baseline/off the shelf cc89
+PROTPARDELLE_CONFIG="/anvil/projects/x-bio260134/jmo/protpardelle-1c/examples/training/cc89.yaml" # basically baseline/off the shelf cc89
 # PROTPARDELLE_CHECKPOINT="/anvil/scratch/x-jmo/protpardelle_runs/cc89_anvil_16139230/cc89_anvil/checkpoints/epoch44_training_state.pth"
 
 PROTPARDELLE_CHECKPOINT="/anvil/projects/x-bio260134/jmo/protpardelle-1c/model_params/weights/cc89_epoch415.pth"
