@@ -104,7 +104,8 @@ def main(args):
     device = torch.device(args.device) if args.device else try_gpu()
     logger.info(f"Using device: {device}")
 
-    num_steps = 200
+    # 500 steps like what dru uses
+    num_steps = 500
 
     # Load model
     logger.info(f"Loading Protpardelle from {args.checkpoint_path}")

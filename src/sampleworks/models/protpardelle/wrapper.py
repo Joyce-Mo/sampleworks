@@ -514,7 +514,11 @@ class ProtpardelleWrapper:
                 self._seq_self_cond.detach(), target_batch_size=batch_size
             )
 
-        # Run model forward
+        # Run model forward. run_mpnn_model=False matches ppd_helper.py
+        # behavior for cc89 (predict_seq=False). The MPNN doesn't modify
+        # denoised coordinates, but running it produces seq_self_cond that
+        # would be fed back into subsequent steps, diverging from the
+        # reference pipeline.
         denoised_coords, _seq_logprobs, struct_sc_out, seq_sc_out = self.model(
             noisy_coords=noisy_coords,
             noise_level=noise_level,
@@ -523,6 +527,7 @@ class ProtpardelleWrapper:
             chain_index=chain_index,
             struct_self_cond=struct_sc,
             seq_self_cond=seq_sc,
+            run_mpnn_model=False,
         )
 
         # Update self-conditioning state (store single-sample for broadcasting)

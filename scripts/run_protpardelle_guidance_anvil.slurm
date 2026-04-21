@@ -1,15 +1,15 @@
 #!/bin/bash
 #SBATCH -A bio260134-ai
-#SBATCH --job-name=baseline_protpardelle_guidance_04202026
+#SBATCH --job-name=baseline_protpardelle_guidance_04212026
 #SBATCH -p ai
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=16
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
-#SBATCH --time=06:00:00
-#SBATCH -o logs/baseline_protpardelle_guidance_04202026_%j.out
-#SBATCH -e logs/baseline_protpardelle_guidance_04202026_%j.err
+#SBATCH --time=03:00:00
+#SBATCH -o logs/baseline_protpardelle_guidance_04212026_%j.out
+#SBATCH -e logs/baseline_protpardelle_guidance_04212026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=ALL
 
@@ -45,7 +45,7 @@ STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5o
 DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 RESOLUTION=1.8
 ENSEMBLE_SIZE=4
-GUIDANCE_START=100 # 130 to keep this consistent with boltz example, switched to 100 / 200 for t = 0.5
+GUIDANCE_START=250 # t = 0.5 with 500 steps (ppd_helper default). Previously 100/200.
 
 ## Run job
 cd "$SAMPLEWORKS_DIR"
