@@ -244,3 +244,4 @@ output/boltz2_pure_guidance/refined.cif
 output/protpardelle_with_guidance/refined.cif
 output/protpardelle_no_guidance/refined.cif
 output/boltz2_pure_guidance/refined.cif
+# *.cif
