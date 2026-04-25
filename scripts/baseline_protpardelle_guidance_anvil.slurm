@@ -1,15 +1,15 @@
 #!/bin/bash
 #SBATCH -A bio260134-ai
-#SBATCH --job-name=baseline_protpardelle_guidance_04162026
+#SBATCH --job-name=baseline_protpardelle_guidance_04252026
 #SBATCH -p ai
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4 
 #SBATCH --cpus-per-task=16
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
-#SBATCH --time=06:00:00
-#SBATCH -o logs/baseline_protpardelle_guidance_04162026_%j.out
-#SBATCH -e logs/baseline_protpardelle_guidance_04162026_%j.err
+#SBATCH --time=01:00:00
+#SBATCH -o logs/baseline_protpardelle_guidance_04252026_%j.out
+#SBATCH -e logs/baseline_protpardelle_guidance_04252026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
 #SBATCH --mail-type=ALL
 
@@ -41,11 +41,11 @@ PROTPARDELLE_CONFIG="/anvil/projects/x-bio260134/jmo/protpardelle-1c/examples/tr
 # PROTPARDELLE_CHECKPOINT="/anvil/scratch/x-jmo/protpardelle_runs/cc89_anvil_16139230/cc89_anvil/checkpoints/epoch44_training_state.pth"
 
 PROTPARDELLE_CHECKPOINT="/anvil/projects/x-bio260134/jmo/protpardelle-1c/model_params/weights/cc89_epoch415.pth"
-STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
-DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
+STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6B8X_single_001_density_input.cif"
+DENSITY="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6YVM_uniform_1.00A.ccp4"
 RESOLUTION=1.8
 ENSEMBLE_SIZE=4
-GUIDANCE_START=100 # 130 to keep this consistent with boltz example, switched to 100 / 200 for t = 0.5
+GUIDANCE_START=250 # 130 to keep this consistent with boltz example, switched to 100 / 200 for t = 0.5
 
 ## Run job
 cd "$SAMPLEWORKS_DIR"

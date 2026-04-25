@@ -141,20 +141,36 @@ def main(args):
         device=device,
     )
 
-    # Stepper config matching protpardelle's native noise schedule (cc89.yaml)
-    # and ppd_helper.py's ODE sampling behavior:
-    #   - sigma_data=10.01, s_max=80.0, s_min=0.001 from cc89.yaml
-    #   - gamma_0=0.0: pure ODE (no stochastic noise injection), ppd_helper
-    #     never adds noise between steps
+    # Derive sigma_data for the schedule from protpardelle's own noise schedule
+    # function. The model's noise schedule (make_sampling_noise_schedule) does
+    # NOT pass sigma_data to diffusion.noise_schedule, so it uses the function's
+    # hardcoded default (10.0), which can differ from the model's internal
+    # sigma_data (used for EDM preconditioning). Using model_wrapper.sigma_data
+    # here would produce a DIFFERENT sigma trajectory than ppd_helper, because
+    # auto_calc_sigma_data can change the model's sigma_data at training time.
+    # We compute it from sigma_max / s_max to guarantee exact match.
+    sigma_max = model_wrapper.model.sampling_noise_schedule_default(
+        torch.tensor(1.0)
+    ).item()
+    s_max = 80.0
+    s_min = 0.001
+    sigma_data_for_schedule = sigma_max / s_max
+    logger.info(
+        f"Noise schedule: sigma_max={sigma_max:.2f}, "
+        f"sigma_data_for_schedule={sigma_data_for_schedule:.4f}, "
+        f"model.sigma_data={model_wrapper.sigma_data:.4f}"
+    )
+
+    # Stepper config matching ppd_helper.py's ODE sampling behavior:
+    #   - gamma_0=0.0: pure ODE (no stochastic noise injection)
     #   - step_scale=1.0: ppd_helper default (AF3 uses 1.5)
     #   - alignment_reverse_diffusion=True: ppd_helper aligns noisy state onto
-    #     denoised prediction before taking the Euler step, which "quantitatively
-    #     improves RMSD to ground truth for cc89" per ppd_helper.py comments
+    #     denoised prediction before Euler step
     stepper = AF3EDMSampler(
         EDMSamplerConfig(
-            sigma_data=model_wrapper.sigma_data,
-            s_max=80.0,
-            s_min=0.001,
+            sigma_data=sigma_data_for_schedule,
+            s_max=s_max,
+            s_min=s_min,
             gamma_0=0.0,
             step_scale=1.0,
             noise_scale=1.0,

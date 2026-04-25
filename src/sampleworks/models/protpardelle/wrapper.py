@@ -502,17 +502,11 @@ class ProtpardelleWrapper:
         residue_index = match_batch(cond.residue_index, target_batch_size=batch_size)
         chain_index = match_batch(cond.chain_index, target_batch_size=batch_size)
 
-        # Match self-conditioning to batch size, detach to isolate from prior steps
-        struct_sc = None
-        if self._struct_self_cond is not None:
-            struct_sc = match_batch(
-                self._struct_self_cond.detach(), target_batch_size=batch_size
-            )
-        seq_sc = None
-        if self._seq_self_cond is not None:
-            seq_sc = match_batch(
-                self._seq_self_cond.detach(), target_batch_size=batch_size
-            )
+        # Detach self-conditioning to isolate from prior steps' computation graph.
+        # Each ensemble member gets its OWN self-conditioning from its own
+        # previous prediction, matching ppd_helper.py behavior.
+        struct_sc = self._struct_self_cond.detach() if self._struct_self_cond is not None else None
+        seq_sc = self._seq_self_cond.detach() if self._seq_self_cond is not None else None
 
         # Run model forward. run_mpnn_model=False matches ppd_helper.py
         # behavior for cc89 (predict_seq=False). The MPNN doesn't modify
@@ -530,9 +524,11 @@ class ProtpardelleWrapper:
             run_mpnn_model=False,
         )
 
-        # Update self-conditioning state (store single-sample for broadcasting)
-        self._struct_self_cond = struct_sc_out[:1].detach()
-        self._seq_self_cond = seq_sc_out[:1].detach()
+        # Update self-conditioning state for ALL ensemble members.
+        # Each sample gets its own self-conditioning at the next step,
+        # matching ppd_helper.py where prev_pred has full batch dimension.
+        self._struct_self_cond = struct_sc_out.detach()
+        self._seq_self_cond = seq_sc_out.detach()
 
         # --- Atom37 → flat via differentiable gather ---
         denoised_flat = denoised_coords.reshape(batch_size, L * _N_ATOM37, 3)
