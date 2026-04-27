@@ -7,7 +7,7 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --gpus-per-node=4
 #SBATCH --exclusive
-#SBATCH --time=00:30:00
+#SBATCH --time=00:15:00
 #SBATCH -o logs/boltz2_guidance_04252026_%j.out
 #SBATCH -e logs/boltz2_guidance_04252026_%j.err
 #SBATCH --mail-user=jqmo@berkeley.edu
@@ -34,7 +34,8 @@ CHECKPOINT="$HOME/.boltz/boltz2_conf.ckpt"
 # STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB.cif"
 # DENSITY="${SAMPLEWORKS_DIR}/tests/resources/1vme/1vme_final_carved_edited_0.5occA_0.5occB_1.80A.ccp4"
 STRUCTURE="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6B8X_single_001_density_input.cif"
-DENSITY="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6YVM_uniform_1.00A.ccp4"
+DENSITY="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6B8X_uniform_1.00A.ccp4"
+
 
 
 RESOLUTION=1.8

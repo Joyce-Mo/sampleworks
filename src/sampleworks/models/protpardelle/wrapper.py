@@ -1,5 +1,5 @@
 """
-Wrapper for Protpardelle 
+Wrapper for Protpardelle
 
 Follows the ``FlowModelWrapper`` protocol in ``models/protocol.py``
 for use in sampleworks guidance pipelines.
@@ -7,7 +7,7 @@ for use in sampleworks guidance pipelines.
 Protpardelle is a diffusion model that operates in residue-atom37
 coordinate space [B, L, 37, 3]. This wrapper translates between the flat
 atom space [B, n_atoms, 3] expected by sampleworks and protpardelle's
-internal representation. The steppers are based on ppd_helper.py from Dru. 
+internal representation. The steppers are based on ppd_helper.py from Dru.
 
 
 """
@@ -439,6 +439,10 @@ class ProtpardelleWrapper:
         layout via differentiable scatter, runs the model forward pass with
         self-conditioning, and gathers real atoms back to flat representation.
 
+        Matches ppd_helper.py's stepper: ghost atoms zeroed, noise_level
+        passed as sigma (shape [B] broadcast to [B, L]), sequential
+        1-indexed residue_index, run_mpnn_model=False for cc89.
+
         Parameters
         ----------
         x_t : Float[Tensor, "batch atoms 3"]
@@ -473,8 +477,8 @@ class ProtpardelleWrapper:
                 t_tensor = t_tensor.unsqueeze(0)
         t_tensor = match_batch(t_tensor, target_batch_size=batch_size)
 
-        # --- Flat → atom37 via differentiable scatter ---
-        # Build index for scatter: [batch, n_real, 3] → [batch, L*37, 3]
+        # --- Flat -> atom37 via differentiable scatter ---
+        # Build index for scatter: [batch, n_real, 3] -> [batch, L*37, 3]
         real_idx = cond.real_atom_indices  # [n_real]
         scatter_idx = real_idx.unsqueeze(0).unsqueeze(-1).expand(
             batch_size, -1, 3
@@ -486,15 +490,16 @@ class ProtpardelleWrapper:
         noisy_coords = noisy_flat.reshape(batch_size, L, _N_ATOM37, 3)
 
         # Ghost atoms (positions where atom_mask == 0) must be explicitly zeroed
-        # before the model forward pass. While scatter leaves unoccupied slots at
-        # zero, this guard ensures correctness even if floating-point drift or
-        # upstream changes introduce nonzero values in ghost positions.
-        # Reference: ppd_helper.py lines 282-284 in protpardelle-1c
+        # before the model forward pass, matching ppd_helper.py:
+        #   mask37 = atom37_mask_from_aatype(self.seq_final, seq_mask).bool()
+        #   xt[~mask37] = 0
         ghost_mask = ~cond.atom_mask.bool()  # [1, L, 37], True where ghost
         ghost_mask = ghost_mask.expand(batch_size, -1, -1)  # [B, L, 37]
         noisy_coords[ghost_mask] = 0.0
 
-        # Broadcast sigma to per-residue [B, L]
+        # Broadcast sigma to per-residue [B, L].
+        # ppd_helper.py passes noise_level as [B] (sigma_curr.expand(B)),
+        # which protpardelle's forward() broadcasts internally to [B, L].
         noise_level = t_tensor.unsqueeze(-1).expand(batch_size, L)
 
         # Expand conditioning to batch size
@@ -530,7 +535,7 @@ class ProtpardelleWrapper:
         self._struct_self_cond = struct_sc_out.detach()
         self._seq_self_cond = seq_sc_out.detach()
 
-        # --- Atom37 → flat via differentiable gather ---
+        # --- Atom37 -> flat via differentiable gather ---
         denoised_flat = denoised_coords.reshape(batch_size, L * _N_ATOM37, 3)
         gather_idx = real_idx.unsqueeze(0).unsqueeze(-1).expand(
             batch_size, -1, 3
@@ -549,11 +554,9 @@ class ProtpardelleWrapper:
         """Sample from the prior N(0, sigma_max^2 * I) in flat atom space.
 
         The noise is scaled by sigma_max from the model's native noise
-        schedule, matching ppd_helper.py: ``coords *= self.noise_schedule(1.0)``.
-        This is critical for protpardelle's pure ODE sampling (gamma=0) because
-        there is no stochastic noise injection at the first step to rescue an
-        unscaled initialization. Without this scaling, the model's c_in
-        preconditioner (1/sigma) crushes the input to near-zero at every step.
+        schedule, matching ppd_helper.py:
+            coords = torch.randn(...)
+            coords *= self.noise_schedule(1.0)
 
         Parameters
         ----------
@@ -580,7 +583,9 @@ class ProtpardelleWrapper:
 
         # Scale noise by sigma_max from protpardelle's noise schedule at t=1.0
         # (t=1 = max noise in protpardelle's convention, opposite of Karras).
-        # Reference: ppd_helper.py line 116-117
+        # Reference: ppd_helper.py line 94-95:
+        #   coords = torch.randn(...)
+        #   coords *= self.noise_schedule(1.0)
         sigma_max = self.model.sampling_noise_schedule_default(
             torch.tensor(1.0)
         ).to(self.device)

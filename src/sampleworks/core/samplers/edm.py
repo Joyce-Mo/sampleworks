@@ -106,6 +106,11 @@ class EDMSamplerConfig:
     scale_guidance_to_diffusion
         Whether to rescale the guidance direction to match the magnitude
         of the diffusion denoising update.
+    center_each_step
+        Whether to subtract the centroid from the state at the start of
+        each step. True for AF3-like models (default). False for models
+        like Protpardelle where the reference sampling code (ppd_helper.py)
+        does not re-center at each step.
     device
         Torch device for schedule tensor allocation.
     """
@@ -122,6 +127,7 @@ class EDMSamplerConfig:
     align_to_input: bool = True
     alignment_reverse_diffusion: bool = False
     scale_guidance_to_diffusion: bool = True
+    center_each_step: bool = True
     device: str | torch.device = "cpu"
 
     def __post_init__(self) -> None:
@@ -398,19 +404,22 @@ class AF3EDMSampler:
         eps_scale = context.noise_scale
         allow_gradients = True if scaler and getattr(scaler, "requires_gradients", False) else False
 
-        centroid = einx.mean("... [n] c", state)
-        state_centered = einx.subtract("... n c, ... c -> ... n c", state, centroid)
+        if self.config.center_each_step:
+            centroid = einx.mean("... [n] c", state)
+            state_prepared = einx.subtract("... n c, ... c -> ... n c", state, centroid)
+        else:
+            state_prepared = state
 
         transform = (
-            create_random_transform(state_centered, center_before_rotation=False)
+            create_random_transform(state_prepared, center_before_rotation=False)
             if self.config.augmentation
             else None
         )
 
         maybe_augmented_state = (
-            apply_forward_transform(state_centered, transform, rotation_only=False)
+            apply_forward_transform(state_prepared, transform, rotation_only=False)
             if transform is not None
-            else state_centered
+            else state_prepared
         )
 
         # Store eps separately for proper frame transformation
