@@ -43,7 +43,7 @@ GUIDANCE_START=250  # t=0.5 with 500 steps
 ## Protein definitions for test
 ## 6B8X (PTP1B, 298 residues)
 STRUCT_6B8X="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6B8X_single_001_density_input.cif"
-## PDB_6B8X="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6B8X_single_001_density_input.pdb"
+PDB_6B8X="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6B8X_single_001_density_input.pdb"
 DENSITY_6B8X="${SAMPLEWORKS_DIR}/tests/resources/Joyce_tests/6B8X_uniform_1.00A.ccp4"
 RESOLUTION_6B8X=1.8
 NRES_6B8X=298
